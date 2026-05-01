@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rain or Shine Pet Grooming · Tatyana Strahan LaBlue · Ft. Myers, FL</title>
+<meta name="description" content="Elegant, stress-free pet grooming in Ft. Myers and Southwest Florida. Mobile and in-home appointments with Tatyana Strahan LaBlue. Reliable. Trustworthy. Book today." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f6f1e8;
+    --cream-light: #faf6ef;
+    --marble: #efe9de;
+    --ink: #1a1a1a;
+    --charcoal: #2b2a28;
+    --gold: #b08a3e;
+    --gold-light: #d4b06a;
+    --gold-deep: #8a6a26;
+    --muted: #6b645a;
+    --line: #cbbf9e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Marble texture background ---------- */
+  .marble-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.9), transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(235,225,205,0.6), transparent 55%),
+      radial-gradient(ellipse at 60% 80%, rgba(220,210,188,0.5), transparent 50%),
+      linear-gradient(135deg, #f6f1e8 0%, #efe9de 40%, #f8f4ec 70%, #ede5d3 100%);
+  }
+  .marble-bg::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0.08 0'/></filter><rect width='600' height='600' filter='url(%23n)'/></svg>");
+    opacity: 0.6;
+    mix-blend-mode: multiply;
+  }
+
+  /* ---------- Gold accent ---------- */
+  .gold-text {
+    background: linear-gradient(135deg, #8a6a26 0%, #d4b06a 40%, #f2d98a 55%, #b08a3e 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gold-line {
+    display: block;
+    width: 60px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent);
+    margin: 1.25rem auto;
+  }
+
+  /* ---------- Navigation ---------- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(246, 241, 232, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(176, 138, 62, 0.15);
+    transition: padding 0.3s ease;
+  }
+  nav .brand {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.6rem;
+    color: var(--ink);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  nav .brand:hover { color: var(--gold-deep); }
+  nav .brand span { color: var(--gold); }
+  nav ul {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  nav ul a {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.3s;
+  }
+  nav ul a::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: -4px;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.35s ease;
+  }
+  nav ul a:hover { color: var(--gold-deep); }
+  nav ul a:hover::after { transform: scaleX(1); }
+
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+  .nav-toggle span {
+    display: block; width: 26px; height: 1.5px; background: var(--ink); margin: 6px 0;
+    transition: 0.3s;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+  }
+  .hero-frame {
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    padding: 5rem 3rem;
+    border: 1px solid rgba(176, 138, 62, 0.3);
+    background: rgba(255, 253, 248, 0.35);
+    backdrop-filter: blur(4px);
+  }
+  .hero-frame::before, .hero-frame::after {
+    content: "";
+    position: absolute;
+    width: 40px; height: 40px;
+    border: 1px solid var(--gold);
+  }
+  .hero-frame::before {
+    top: -8px; left: -8px;
+    border-right: none; border-bottom: none;
+  }
+  .hero-frame::after {
+    bottom: -8px; right: -8px;
+    border-left: none; border-top: none;
+  }
+
+  .hero-tag {
+    font-size: 0.72rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Parisienne', cursive;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    line-height: 0.95;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 .shine { color: var(--gold); font-style: italic; }
+  .hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-top: 0.5rem;
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    color: var(--muted);
+    margin-top: 2rem;
+    max-width: 620px;
+    margin-left: auto; margin-right: auto;
+  }
+  .hero-cta {
+    display: inline-flex; gap: 1rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+    border: 1px solid var(--ink);
+  }
+  .btn-primary:hover {
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(138, 106, 38, 0.25);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--charcoal);
+    border: 1px solid var(--charcoal);
+  }
+  .btn-outline:hover {
+    background: var(--charcoal);
+    color: var(--cream);
+    transform: translateY(-2px);
+  }
+
+  /* Decorative dog silhouette in hero — removed */
+
+  /* ---------- Sections ---------- */
+  section {
+    padding: 7rem 2rem;
+    position: relative;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    text-align: center;
+    font-weight: 600;
+  }
+  .section-title {
+    font-family: 'Parisienne', cursive;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+    color: var(--ink);
+    margin: 0.5rem 0 1rem;
+    font-weight: 400;
+  }
+  .section-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--muted);
+    max-width: 680px;
+    margin: 0 auto 4rem;
+  }
+
+  /* ---------- About ---------- */
+  #about {
+    padding-top: 3rem;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-portrait {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(135deg, #d4c8a8, #8a7a5a);
+    border: 1px solid var(--gold);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    overflow: hidden;
+  }
+  .about-portrait::before {
+    content: "";
+    position: absolute; inset: 12px;
+    border: 1px solid rgba(255,255,255,0.4);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .about-portrait img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .portrait-placeholder {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 2rem;
+  }
+  .about-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .about-text .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .about-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--charcoal);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+  }
+  .about-text .highlight {
+    font-family: 'Parisienne', cursive;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: var(--gold-deep);
+    background: linear-gradient(180deg, transparent 60%, rgba(212, 176, 106, 0.25) 60%);
+    padding: 0 0.15em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .about-text .signature {
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+    color: var(--gold-deep);
+    margin-top: 1.5rem;
+  }
+
+  /* ---------- Services ---------- */
+  #services {
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 253, 248, 0.4) 50%, transparent 100%);
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .service-card {
+    background: rgba(255, 253, 248, 0.6);
+    border: 1px solid rgba(176, 138, 62, 0.2);
+    padding: 2rem 1.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: "";
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    background: rgba(255, 253, 248, 0.9);
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    width: 42px; height: 42px;
+    margin-bottom: 1.25rem;
+    color: var(--gold);
+  }
+  .service-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .services-note {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-top: 3rem;
+  }
+
+  /* ---------- Service Area ---------- */
+  #area {
+    text-align: center;
+  }
+  .area-box {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    padding: 3.5rem 3rem;
+    border: 1px solid rgba(176, 138, 62, 0.3);
+    background: rgba(255, 253, 248, 0.45);
+    position: relative;
+  }
+  .area-box::before, .area-box::after {
+    content: "";
+    position: absolute;
+    width: 30px; height: 30px;
+    border: 1px solid var(--gold);
+  }
+  .area-box::before { top: -6px; left: -6px; border-right: none; border-bottom: none; }
+  .area-box::after { bottom: -6px; right: -6px; border-left: none; border-top: none; }
+
+  .area-city {
+    font-family: 'Parisienne', cursive;
+    font-size: 3.5rem;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .area-state {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--gold-deep);
+    margin-top: 0.5rem;
+  }
+  .area-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--charcoal);
+    margin-top: 1.5rem;
+    font-style: italic;
+  }
+  .area-neighborhoods {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .area-tag {
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--gold);
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    background: transparent;
+  }
+
+  /* ---------- Contact ---------- */
+  #contact {
+    background: linear-gradient(180deg, transparent, rgba(43, 42, 40, 0.03));
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    margin-top: 2rem;
+  }
+  .contact-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  .contact-info p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+  .contact-item svg {
+    width: 22px; height: 22px;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .contact-item .label {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 0.25rem;
+  }
+  .contact-item .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .contact-item .value:hover { color: var(--gold-deep); }
+
+  /* Form */
+  form {
+    background: rgba(255, 253, 248, 0.7);
+    padding: 3rem;
+    border: 1px solid rgba(176, 138, 62, 0.25);
+    position: relative;
+  }
+  form::before, form::after {
+    content: "";
+    position: absolute;
+    width: 25px; height: 25px;
+    border: 1px solid var(--gold);
+  }
+  form::before { top: -5px; left: -5px; border-right: none; border-bottom: none; }
+  form::after { bottom: -5px; right: -5px; border-left: none; border-top: none; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(176, 138, 62, 0.3);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--ink);
+    transition: all 0.3s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 0 3px rgba(176, 138, 62, 0.1);
+  }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+  }
+  .checkbox-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--charcoal);
+  }
+  .checkbox-item input {
+    width: auto;
+    accent-color: var(--gold);
+  }
+
+  .form-submit-row {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .form-success {
+    display: none;
+    padding: 1.5rem;
+    background: rgba(176, 138, 62, 0.1);
+    border: 1px solid var(--gold);
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold-deep);
+  }
+  .form-success.show { display: block; }
+
+  /* Honeypot: visually hidden but not display:none (more effective spam catch) */
+  .hp-field {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+  footer .footer-brand {
+    font-family: 'Parisienne', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  footer .footer-brand span { color: var(--gold-light); }
+  footer .footer-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  footer .footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  footer .footer-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    transition: opacity 0.3s, color 0.3s;
+  }
+  footer .footer-links a:hover { color: var(--gold-light); opacity: 1; }
+  footer .copy {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    letter-spacing: 1px;
+    border-top: 1px solid rgba(212, 176, 106, 0.2);
+    padding-top: 2rem;
+    margin-top: 1rem;
+  }
+
+  /* ---------- Paw prints decoration ---------- */
+  .paw-trail {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.08;
+  }
+
+  /* ---------- Animations ---------- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+  }
+  .reveal.d1 { animation-delay: 0.15s; }
+  .reveal.d2 { animation-delay: 0.35s; }
+  .reveal.d3 { animation-delay: 0.55s; }
+  .reveal.d4 { animation-delay: 0.75s; }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0;
+             flex-direction: column; background: var(--cream); padding: 1.5rem;
+             border-bottom: 1px solid var(--line); gap: 1.25rem; }
+    nav ul.open { display: flex; }
+    .nav-toggle { display: block; }
+
+    .hero-frame { padding: 3.5rem 1.5rem; }
+
+    section { padding: 5rem 1.5rem; }
+    .about-grid, .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .about-portrait { max-width: 360px; margin: 0 auto; }
+    form { padding: 2rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .area-box { padding: 2.5rem 1.5rem; }
+    .area-city { font-size: 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="marble-bg"></div>
+
+<!-- Reusable paw icon -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="paw-icon" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 14c-3 0-6 2.2-6 5 0 1.7 1.3 3 3 3 1.1 0 2-.6 3-.6s1.9.6 3 .6c1.7 0 3-1.3 3-3 0-2.8-3-5-6-5zM5 12a2 2 0 100-4 2 2 0 000 4zm14 0a2 2 0 100-4 2 2 0 000 4zM9 7a2 2 0 100-4 2 2 0 000 4zm6 0a2 2 0 100-4 2 2 0 000 4z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#top" class="brand">Rain <span>or</span> Shine</a>
+  <ul id="navMenu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#area">Service Area</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-frame">
+    <p class="hero-tag reveal d1">Ft. Myers · Southwest Florida · By Appointment</p>
+    <h1 class="reveal d2">Rain <span class="shine">or</span> Shine</h1>
+    <span class="gold-line"></span>
+    <h2 class="reveal d3">Pet Grooming</h2>
+    <p class="hero-sub reveal d4">
+      A reliable, trustworthy caretaker for your beloved companion — where every wash, cut, and tail wag is treated with the care it deserves.
+    </p>
+    <div class="hero-cta reveal d4">
+      <a href="#contact" class="btn btn-primary">Book an Appointment</a>
+      <a href="#services" class="btn btn-outline">View Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-portrait scroll-reveal">
+        <img src="https://gottamoveforward.com/wp-content/uploads/2026/04/tatyana.jpg" alt="Tatyana Strahan LaBlue, owner of Rain or Shine Pet Grooming">
+      </div>
+      <div class="about-text scroll-reveal">
+        <span class="eyebrow">Meet Your Groomer</span>
+        <h3>Hi, I'm Tatyana — and I love what I do.</h3>
+        <p>Every pet that visits me gets the full treatment — gentle handling, premium products, and the patience each one deserves. I rely on my own <em class="highlight">dog-whisperer techniques</em> to keep even the most anxious pups calm and comfortable from the first brushstroke to the final blow-dry.</p>
+        <p>Rain or Shine Pet Grooming was built on a simple belief: your pet's happiness and well-being put a smile on my face. When you make an appointment your furry friend is in good hands — and will leave looking and feeling their absolute best.</p>
+        <div class="signature">— Tatyana</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <p class="section-label scroll-reveal">The Menu</p>
+    <h2 class="section-title scroll-reveal">Services crafted with care</h2>
+    <span class="gold-line"></span>
+    <p class="section-sub scroll-reveal">From a simple freshen-up to full breed-specific styling — every service is tailored to your pet's coat, temperament, and comfort.</p>
+
+    <div class="services-grid">
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h8M4 8h10M4 16h7M14 12c3 0 6-2 6-5M14 12c3 0 6 2 6 5"/></svg>
+        <h4>Blow Drying</h4>
+        <p>The dog whisperer's favorite. Controlled heat and airflow, drying technique matched to the coat — calm, comfortable, and beautifully finished.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6m0 0c-4 0-7 3-7 7 0 4 3 7 7 7s7-3 7-7c0-4-3-7-7-7z"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/></svg>
+        <h4>Bath &amp; Shampoo</h4>
+        <p>Gentle handling and professional products tailored to each coat type — thorough cleaning without the stress.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20L20 4M6 18c0-3 3-5 5-5s5 2 5 5"/><path d="M4 16l4-4M8 12l4-4M12 8l4-4"/></svg>
+        <h4>Brush &amp; De-Shed</h4>
+        <p>Proper tools, proper technique — shedding cycles understood, tangles eased, calm kept throughout.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+        <h4>Haircut &amp; Styling</h4>
+        <p>Breed-specific scissoring and clipping with an artistic flair. Tools sharpened regularly for a clean finish.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3v10l5 4 5-4V3M7 3h10M12 17v4"/></svg>
+        <h4>Nail Trim &amp; File</h4>
+        <p>Safe restraint, precise cuts, and a careful eye on the quick — comfort and safety come first.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3a5 5 0 00-5 5c0 4 5 10 5 10s5-6 5-10a5 5 0 00-5-5z"/><circle cx="12" cy="8" r="1.5" fill="currentColor"/></svg>
+        <h4>Ear Cleaning</h4>
+        <p>Gentle methods matched to each dog, with a watchful eye for signs of infection. Sanitary and thorough.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6l1 6H8zM8 9l2 12h4l2-12"/></svg>
+        <h4>Teeth Brushing</h4>
+        <p>Pet-safe brushes and toothpaste, applied patiently — because oral health is whole-body health.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2c-2 4-6 6-6 10a6 6 0 0012 0c0-4-4-6-6-10z"/><path d="M9 14c1 1 2 1 3 1s2 0 3-1"/></svg>
+        <h4>De-Matting</h4>
+        <p>Mats removed with minimal discomfort using the right products and an experienced touch.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24"><use href="#paw-icon"/></svg>
+        <h4>Paw &amp; Sanitary Trims</h4>
+        <p>A steady hand, knowledge of paw anatomy, and the highest standards of cleanliness in sensitive areas.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h4>Flea &amp; Tick Care</h4>
+        <p>Safe, up-to-date treatments — or guidance so owners can safely manage pest control at home.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.5 7h7l-5.5 4 2 7L12 16l-6 4 2-7-5.5-4h7z"/></svg>
+        <h4>Coat Conditioning</h4>
+        <p>Nourishing treatments and deodorizing sprays selected for each pet's individual coat and skin needs.</p>
+      </div>
+      <div class="service-card scroll-reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M4.93 19.07l2.83-2.83M12 18v4M19.07 19.07l-2.83-2.83M18 12h4M19.07 4.93l-2.83 2.83"/><circle cx="12" cy="12" r="3"/></svg>
+        <h4>Seasonal &amp; Holiday</h4>
+        <p>Festive styling for holidays and special events — creative, tasteful, and absolutely picture-ready.</p>
+      </div>
+    </div>
+
+    <p class="services-note scroll-reveal">All services priced individually — contact for a quote tailored to your pet.</p>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="area">
+  <div class="container">
+    <p class="section-label scroll-reveal">Where I Serve</p>
+    <h2 class="section-title scroll-reveal">Proudly based in</h2>
+
+    <div class="area-box scroll-reveal">
+      <div class="area-city">Ft. Myers</div>
+      <div class="area-state">Southwest Florida</div>
+      <p class="area-desc">Serving Ft. Myers and the surrounding Southwest Florida communities.</p>
+      <div class="area-neighborhoods">
+        <span class="area-tag">Ft. Myers</span>
+        <span class="area-tag">Cape Coral</span>
+        <span class="area-tag">Bonita Springs</span>
+        <span class="area-tag">Estero</span>
+        <span class="area-tag">Naples</span>
+        <span class="area-tag">Lehigh Acres</span>
+        <span class="area-tag">Sanibel</span>
+        <span class="area-tag">Fort Myers Beach</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label scroll-reveal">Get in Touch</p>
+    <h2 class="section-title scroll-reveal">Let's book your appointment</h2>
+    <span class="gold-line"></span>
+    <p class="section-sub scroll-reveal">Fill out the form and I'll be in touch personally to confirm date, time, and pricing — tailored to your pet.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info scroll-reveal">
+        <h3>Reach Tatyana directly.</h3>
+        <p>Prefer a quick call or text? I'd love to hear from you.</p>
+
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div>
+            <div class="label">Phone</div>
+            <a href="tel:7199644930" class="value">719.964.4930</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <div>
+            <div class="label">Email</div>
+            <a href="mailto:Tatyana.Strahan@Gmail.com" class="value">Tatyana.Strahan@Gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div>
+            <div class="label">Hours</div>
+            <div class="value">By Appointment · Flexible</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div>
+            <div class="label">Service Area</div>
+            <div class="value">Ft. Myers &amp; Southwest Florida</div>
+          </div>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="scroll-reveal" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="booking">
+        <div class="hp-field" aria-hidden="true">
+          <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="petName">Pet's Name</label>
+            <input type="text" id="petName" name="petName" required>
+          </div>
+          <div class="form-group">
+            <label for="petBreed">Breed</label>
+            <input type="text" id="petBreed" name="petBreed">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="petSize">Pet Size</label>
+          <select id="petSize" name="petSize" required>
+            <option value="">Select size</option>
+            <option value="small">Small (under 20 lbs)</option>
+            <option value="medium">Medium (20–50 lbs)</option>
+            <option value="large">Large (50–80 lbs)</option>
+            <option value="xlarge">Extra Large (80+ lbs)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Services of Interest</label>
+          <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" name="services" value="bath"> Bath &amp; Shampoo</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="haircut"> Haircut &amp; Styling</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="nails"> Nail Trim</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="deshed"> Brush &amp; De-shed</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="ears"> Ear Cleaning</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="teeth"> Teeth Brushing</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="dematting"> De-matting</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="full"> Full Groom</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prefDate">Preferred Date</label>
+            <input type="date" id="prefDate" name="prefDate">
+          </div>
+          <div class="form-group">
+            <label for="prefTime">Preferred Time</label>
+            <select id="prefTime" name="prefTime">
+              <option value="">Select time</option>
+              <option value="06:00">6:00 AM</option>
+              <option value="06:15">6:15 AM</option>
+              <option value="06:30">6:30 AM</option>
+              <option value="06:45">6:45 AM</option>
+              <option value="07:00">7:00 AM</option>
+              <option value="07:15">7:15 AM</option>
+              <option value="07:30">7:30 AM</option>
+              <option value="07:45">7:45 AM</option>
+              <option value="08:00">8:00 AM</option>
+              <option value="08:15">8:15 AM</option>
+              <option value="08:30">8:30 AM</option>
+              <option value="08:45">8:45 AM</option>
+              <option value="09:00">9:00 AM</option>
+              <option value="09:15">9:15 AM</option>
+              <option value="09:30">9:30 AM</option>
+              <option value="09:45">9:45 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="10:15">10:15 AM</option>
+              <option value="10:30">10:30 AM</option>
+              <option value="10:45">10:45 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="11:15">11:15 AM</option>
+              <option value="11:30">11:30 AM</option>
+              <option value="11:45">11:45 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="12:15">12:15 PM</option>
+              <option value="12:30">12:30 PM</option>
+              <option value="12:45">12:45 PM</option>
+              <option value="13:00">1:00 PM</option>
+              <option value="13:15">1:15 PM</option>
+              <option value="13:30">1:30 PM</option>
+              <option value="13:45">1:45 PM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="14:15">2:15 PM</option>
+              <option value="14:30">2:30 PM</option>
+              <option value="14:45">2:45 PM</option>
+              <option value="15:00">3:00 PM</option>
+              <option value="15:15">3:15 PM</option>
+              <option value="15:30">3:30 PM</option>
+              <option value="15:45">3:45 PM</option>
+              <option value="16:00">4:00 PM</option>
+              <option value="16:15">4:15 PM</option>
+              <option value="16:30">4:30 PM</option>
+              <option value="16:45">4:45 PM</option>
+              <option value="17:00">5:00 PM</option>
+              <option value="17:15">5:15 PM</option>
+              <option value="17:30">5:30 PM</option>
+              <option value="17:45">5:45 PM</option>
+              <option value="18:00">6:00 PM</option>
+              <option value="18:15">6:15 PM</option>
+              <option value="18:30">6:30 PM</option>
+              <option value="18:45">6:45 PM</option>
+              <option value="19:00">7:00 PM</option>
+              <option value="19:15">7:15 PM</option>
+              <option value="19:30">7:30 PM</option>
+              <option value="19:45">7:45 PM</option>
+              <option value="20:00">8:00 PM</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" placeholder="Anything I should know about your pet..."></textarea>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn btn-primary">Request Appointment</button>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          Thank you — your request has been sent. Tatyana will be in touch shortly to confirm your appointment.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Rain <span>or</span> Shine</div>
+  <div class="footer-tag">Pet Grooming · Ft. Myers &amp; Southwest Florida</div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#area">Service Area</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:7199644930">719.964.4930</a></li>
+  </ul>
+  <div class="copy">© 2026 RAIN OR SHINE PET GROOMING · ALL RIGHTS RESERVED</div>
+</footer>
+
+<script>
+  // Mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMenu.classList.remove('open')));
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.scroll-reveal').forEach(el => io.observe(el));
+
+  // Form submit — Netlify AJAX submission
+  // https://docs.netlify.com/manage/forms/setup/#submit-html-forms-with-ajax
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const successEl = document.getElementById('formSuccess');
+
+    // Disable the button while submitting so they can't double-click
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+    }
+
+    const formData = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        successEl.classList.add('show');
+        if (submitBtn) submitBtn.style.display = 'none';
+        setTimeout(() => {
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      })
+      .catch(error => {
+        console.error('Form submission error:', error);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request Appointment';
+        }
+        alert("Sorry — there was a problem sending your request. Please try again, or call Tatyana directly at 719.964.4930.");
+      });
+  }
+</script>
+
+</body>
+</html>
