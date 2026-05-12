@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- v2.0 2026-5-12 -->
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -68,6 +69,38 @@
     background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent);
     margin: 1.25rem auto;
   }
+
+  /* ---------- Coming Soon Banner ---------- */
+  .banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    background: linear-gradient(90deg, var(--gold-deep) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+    color: var(--cream);
+    padding: 0.65rem 1.5rem;
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .banner strong {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .banner-icon { font-size: 1rem; }
+
+  /* Push nav and hero down below the banner */
+  nav { top: 42px; }
+  .hero { padding-top: 10rem; }
 
   /* ---------- Navigation ---------- */
   nav {
@@ -340,12 +373,15 @@
   .about-text .highlight {
     font-family: 'Parisienne', cursive;
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--gold-deep);
     background: linear-gradient(180deg, transparent 60%, rgba(212, 176, 106, 0.25) 60%);
     padding: 0 0.15em;
-    line-height: 1;
-    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .about-text strong {
+    color: var(--ink);
+    font-weight: 600;
   }
   .about-text .signature {
     font-family: 'Parisienne', cursive;
@@ -358,63 +394,182 @@
   #services {
     background: linear-gradient(180deg, transparent 0%, rgba(255, 253, 248, 0.4) 50%, transparent 100%);
   }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  .service-card {
-    background: rgba(255, 253, 248, 0.6);
-    border: 1px solid rgba(176, 138, 62, 0.2);
-    padding: 2rem 1.75rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-  }
-  .service-card::before {
-    content: "";
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease;
-  }
-  .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    background: rgba(255, 253, 248, 0.9);
-  }
-  .service-card:hover::before { transform: scaleX(1); }
 
-  .service-icon {
-    width: 42px; height: 42px;
-    margin-bottom: 1.25rem;
-    color: var(--gold);
+  /* Tiered packages */
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
   }
-  .service-card h4 {
+  .package-card {
+    background: rgba(255, 253, 248, 0.7);
+    border: 1px solid rgba(176, 138, 62, 0.25);
+    padding: 3rem 2rem 2.5rem;
+    position: relative;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .package-card::before, .package-card::after {
+    content: "";
+    position: absolute;
+    width: 25px; height: 25px;
+    border: 1px solid var(--gold);
+  }
+  .package-card::before { top: -5px; left: -5px; border-right: none; border-bottom: none; }
+  .package-card::after { bottom: -5px; right: -5px; border-left: none; border-top: none; }
+  .package-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    background: rgba(255, 253, 248, 0.95);
+  }
+  .package-card-featured {
+    background: rgba(255, 253, 248, 0.95);
+    border-color: var(--gold);
+    box-shadow: 0 15px 35px rgba(176, 138, 62, 0.15);
+  }
+  .package-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ink);
+    color: var(--cream);
+    padding: 0.5rem 1.2rem;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .package-tier {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--gold-deep);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .package-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
     font-weight: 600;
     color: var(--ink);
     margin-bottom: 0.5rem;
-    letter-spacing: 0.5px;
+    line-height: 1.2;
   }
-  .service-card p {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.65;
-  }
-
-  .services-note {
-    text-align: center;
+  .package-card .gold-line { margin: 1rem auto 1.25rem; }
+  .package-tagline {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1.1rem;
     color: var(--muted);
-    margin-top: 3rem;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
   }
+  .package-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+  }
+  .package-features li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--charcoal);
+    padding: 0.4rem 0 0.4rem 1.4rem;
+    position: relative;
+    border-bottom: 1px solid rgba(176, 138, 62, 0.12);
+  }
+  .package-features li:last-child { border-bottom: none; }
+  .package-features li::before {
+    content: "❋";
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+    color: var(--gold);
+    font-size: 0.85rem;
+  }
+
+  .pricing-note {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--muted);
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(176, 138, 62, 0.15);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Add-ons (Spa / Creative / Walk-in) */
+  .addons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+  .addon-card {
+    background: rgba(255, 253, 248, 0.5);
+    border: 1px dashed rgba(176, 138, 62, 0.4);
+    padding: 2rem 1.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .addon-card:hover {
+    background: rgba(255, 253, 248, 0.85);
+    border-style: solid;
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+  .addon-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+  .addon-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+  .addon-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--charcoal);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .addon-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+  }
+  .addon-list li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    padding: 0.35rem 0;
+    color: var(--charcoal);
+    border-bottom: 1px solid rgba(176, 138, 62, 0.1);
+  }
+  .addon-list li:last-child { border-bottom: none; }
+  .addon-list li strong {
+    color: var(--gold-deep);
+    font-weight: 600;
+  }
+  .addon-fineprint {
+    font-size: 0.85rem !important;
+    font-style: italic;
+    color: var(--muted) !important;
+    margin-top: 0.75rem !important;
+    margin-bottom: 0 !important;
+  }
+  .addon-spa { background: linear-gradient(135deg, rgba(255,253,248,0.6), rgba(212,176,106,0.08)); }
+  .addon-creative { background: linear-gradient(135deg, rgba(255,253,248,0.6), rgba(176,138,62,0.06)); }
+  .addon-walkin { background: linear-gradient(135deg, rgba(255,253,248,0.6), rgba(212,176,106,0.05)); }
 
   /* ---------- Service Area ---------- */
   #area {
@@ -707,7 +862,8 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
+    .banner { font-size: 0.7rem; padding: 0.55rem 1rem; letter-spacing: 1px; }
+    nav { padding: 1rem 1.5rem; top: 38px; }
     nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0;
              flex-direction: column; background: var(--cream); padding: 1.5rem;
              border-bottom: 1px solid var(--line); gap: 1.25rem; }
@@ -721,6 +877,8 @@
       grid-template-columns: 1fr;
       gap: 3rem;
     }
+    .packages-grid, .addons-grid { grid-template-columns: 1fr; }
+    .package-card-featured { order: -1; }
     .about-portrait { max-width: 360px; margin: 0 auto; }
     form { padding: 2rem 1.5rem; }
     .form-row { grid-template-columns: 1fr; }
@@ -730,6 +888,12 @@
 </style>
 </head>
 <body>
+
+<!-- Coming Soon Banner -->
+<div class="banner">
+  <span class="banner-icon">✨</span>
+  <span><strong>Coming this Fall:</strong> A brand-new brick &amp; mortar location — same trusted hands, brand-new home. Stay tuned!</span>
+</div>
 
 <div class="marble-bg"></div>
 
@@ -783,9 +947,10 @@
       <div class="about-text scroll-reveal">
         <span class="eyebrow">Meet Your Groomer</span>
         <h3>Hi, I'm Tatyana — and I love what I do.</h3>
-        <p>Every pet that visits me gets the full treatment — gentle handling, premium products, and the patience each one deserves. I rely on my own <em class="highlight">dog-whisperer techniques</em> to keep even the most anxious pups calm and comfortable from the first brushstroke to the final blow-dry.</p>
-        <p>Rain or Shine Pet Grooming was built on a simple belief: your pet's happiness and well-being put a smile on my face. When you make an appointment your furry friend is in good hands — and will leave looking and feeling their absolute best.</p>
-        <div class="signature">— Tatyana</div>
+        <p>I'm a pet groomer with 5+ years of professional experience, and I grew up working with rescues and fostering pets in need of homes. My special interest is in <em class="highlight">skin and coat health</em> — because your pet deserves to not only look their best, but to feel their best, too.</p>
+        <p>Every pet that visits me gets the full treatment — gentle handling, premium products, and the patience each one deserves. I use <strong>industry-backed techniques</strong> to keep even the most anxious pups calm and comfortable from the first brushstroke to the final blow-dry.</p>
+        <p>Rain or Shine Pet Grooming was built on a simple belief: your pet's happiness and well-being put a smile on my face. Your furry friend is in good hands — and will leave looking and feeling their absolute best.</p>
+        <div class="signature">— Tatyana Strahan LaBlue</div>
       </div>
     </div>
   </div>
@@ -797,72 +962,87 @@
     <p class="section-label scroll-reveal">The Menu</p>
     <h2 class="section-title scroll-reveal">Services crafted with care</h2>
     <span class="gold-line"></span>
-    <p class="section-sub scroll-reveal">From a simple freshen-up to full breed-specific styling — every service is tailored to your pet's coat, temperament, and comfort.</p>
+    <p class="section-sub scroll-reveal">Every package is full-service — featuring our 2-step shampoo system tailored to your pet's individual skin and coat needs, blow dry, ear cleaning, brush out, and nail trim &amp; file (if your pet allows).</p>
 
-    <div class="services-grid">
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h8M4 8h10M4 16h7M14 12c3 0 6-2 6-5M14 12c3 0 6 2 6 5"/></svg>
-        <h4>Blow Drying</h4>
-        <p>The dog whisperer's favorite. Controlled heat and airflow, drying technique matched to the coat — calm, comfortable, and beautifully finished.</p>
+    <!-- TIERED PACKAGES -->
+    <div class="packages-grid">
+      <div class="package-card scroll-reveal">
+        <div class="package-tier">Tier One</div>
+        <h3 class="package-name">Full Service Bath</h3>
+        <span class="gold-line"></span>
+        <p class="package-tagline">The essentials, beautifully done.</p>
+        <ul class="package-features">
+          <li>2-step shampoo system</li>
+          <li>Conditioner</li>
+          <li>Blow dry</li>
+          <li>Ear cleaning</li>
+          <li>Brush out</li>
+          <li>Nail trim &amp; file</li>
+        </ul>
       </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6m0 0c-4 0-7 3-7 7 0 4 3 7 7 7s7-3 7-7c0-4-3-7-7-7z"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/></svg>
-        <h4>Bath &amp; Shampoo</h4>
-        <p>Gentle handling and professional products tailored to each coat type — thorough cleaning without the stress.</p>
+
+      <div class="package-card package-card-featured scroll-reveal">
+        <div class="package-badge">Most Popular</div>
+        <div class="package-tier">Tier Two</div>
+        <h3 class="package-name">Full Service Bath &amp; Tidy</h3>
+        <span class="gold-line"></span>
+        <p class="package-tagline">Everything in the Bath — and a polished finish.</p>
+        <ul class="package-features">
+          <li>Everything in Full Service Bath</li>
+          <li>Face trim</li>
+          <li>Feet trim</li>
+          <li>Sanitary trim</li>
+        </ul>
       </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20L20 4M6 18c0-3 3-5 5-5s5 2 5 5"/><path d="M4 16l4-4M8 12l4-4M12 8l4-4"/></svg>
-        <h4>Brush &amp; De-Shed</h4>
-        <p>Proper tools, proper technique — shedding cycles understood, tangles eased, calm kept throughout.</p>
-      </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
-        <h4>Haircut &amp; Styling</h4>
-        <p>Breed-specific scissoring and clipping with an artistic flair. Tools sharpened regularly for a clean finish.</p>
-      </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3v10l5 4 5-4V3M7 3h10M12 17v4"/></svg>
-        <h4>Nail Trim &amp; File</h4>
-        <p>Safe restraint, precise cuts, and a careful eye on the quick — comfort and safety come first.</p>
-      </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3a5 5 0 00-5 5c0 4 5 10 5 10s5-6 5-10a5 5 0 00-5-5z"/><circle cx="12" cy="8" r="1.5" fill="currentColor"/></svg>
-        <h4>Ear Cleaning</h4>
-        <p>Gentle methods matched to each dog, with a watchful eye for signs of infection. Sanitary and thorough.</p>
-      </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6l1 6H8zM8 9l2 12h4l2-12"/></svg>
-        <h4>Teeth Brushing</h4>
-        <p>Pet-safe brushes and toothpaste, applied patiently — because oral health is whole-body health.</p>
-      </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2c-2 4-6 6-6 10a6 6 0 0012 0c0-4-4-6-6-10z"/><path d="M9 14c1 1 2 1 3 1s2 0 3-1"/></svg>
-        <h4>De-Matting</h4>
-        <p>Mats removed with minimal discomfort using the right products and an experienced touch.</p>
-      </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24"><use href="#paw-icon"/></svg>
-        <h4>Paw &amp; Sanitary Trims</h4>
-        <p>A steady hand, knowledge of paw anatomy, and the highest standards of cleanliness in sensitive areas.</p>
-      </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <h4>Flea &amp; Tick Care</h4>
-        <p>Safe, up-to-date treatments — or guidance so owners can safely manage pest control at home.</p>
-      </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.5 7h7l-5.5 4 2 7L12 16l-6 4 2-7-5.5-4h7z"/></svg>
-        <h4>Coat Conditioning</h4>
-        <p>Nourishing treatments and deodorizing sprays selected for each pet's individual coat and skin needs.</p>
-      </div>
-      <div class="service-card scroll-reveal">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M4.93 19.07l2.83-2.83M12 18v4M19.07 19.07l-2.83-2.83M18 12h4M19.07 4.93l-2.83 2.83"/><circle cx="12" cy="12" r="3"/></svg>
-        <h4>Seasonal &amp; Holiday</h4>
-        <p>Festive styling for holidays and special events — creative, tasteful, and absolutely picture-ready.</p>
+
+      <div class="package-card scroll-reveal">
+        <div class="package-tier">Tier Three</div>
+        <h3 class="package-name">Full Service Haircut</h3>
+        <span class="gold-line"></span>
+        <p class="package-tagline">The full treatment, head to paw.</p>
+        <ul class="package-features">
+          <li>Everything in Bath &amp; Tidy</li>
+          <li>Full body haircut</li>
+          <li>Breed-specific styling</li>
+          <li>Finishing touches</li>
+        </ul>
       </div>
     </div>
 
-    <p class="services-note scroll-reveal">All services priced individually — contact for a quote tailored to your pet.</p>
+    <p class="pricing-note scroll-reveal">
+      <em>Starting prices vary by breed, size, coat condition, and behavior — contact for a personalized quote.</em>
+    </p>
+
+    <!-- SPA + CREATIVE + WALK-IN ADD-ONS -->
+    <div class="addons-grid">
+      <div class="addon-card scroll-reveal addon-spa">
+        <div class="addon-icon">✨</div>
+        <h4>Spa Packages</h4>
+        <p>Designed with health and luxury in mind. <em>Ask about our premium spa add-ons</em> for the pup who deserves the royal treatment.</p>
+      </div>
+
+      <div class="addon-card scroll-reveal addon-creative">
+        <div class="addon-icon">🎨</div>
+        <h4>Creative Grooming</h4>
+        <p>Because every dog has a flair for the dramatic.</p>
+        <ul class="addon-list">
+          <li><strong>Hair color</strong> — for the pup who wants to make a statement</li>
+          <li><strong>Nail pawlish</strong> — manicures, but make it canine 💅</li>
+        </ul>
+        <p class="addon-fineprint">May require a complimentary consultation.</p>
+      </div>
+
+      <div class="addon-card scroll-reveal addon-walkin">
+        <div class="addon-icon">🐾</div>
+        <h4>Walk-In Services</h4>
+        <p>Quick visits, no appointment needed:</p>
+        <ul class="addon-list">
+          <li>Nail trim &amp; file</li>
+          <li>Ear cleaning</li>
+          <li>Teeth brushing</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -875,7 +1055,7 @@
     <div class="area-box scroll-reveal">
       <div class="area-city">Ft. Myers</div>
       <div class="area-state">Southwest Florida</div>
-      <p class="area-desc">Serving Ft. Myers and the surrounding Southwest Florida communities.</p>
+      <p class="area-desc">Serving Ft. Myers and the surrounding Southwest Florida communities — mobile grooming available for your convenience, so I can come to you.</p>
       <div class="area-neighborhoods">
         <span class="area-tag">Ft. Myers</span>
         <span class="area-tag">Cape Coral</span>
@@ -980,16 +1160,11 @@
         </div>
 
         <div class="form-group">
-          <label>Services of Interest</label>
+          <label>Service of Interest</label>
           <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox" name="services" value="bath"> Bath &amp; Shampoo</label>
-            <label class="checkbox-item"><input type="checkbox" name="services" value="haircut"> Haircut &amp; Styling</label>
-            <label class="checkbox-item"><input type="checkbox" name="services" value="nails"> Nail Trim</label>
-            <label class="checkbox-item"><input type="checkbox" name="services" value="deshed"> Brush &amp; De-shed</label>
-            <label class="checkbox-item"><input type="checkbox" name="services" value="ears"> Ear Cleaning</label>
-            <label class="checkbox-item"><input type="checkbox" name="services" value="teeth"> Teeth Brushing</label>
-            <label class="checkbox-item"><input type="checkbox" name="services" value="dematting"> De-matting</label>
-            <label class="checkbox-item"><input type="checkbox" name="services" value="full"> Full Groom</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Bath"> Full Service Bath</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Bath &amp; Tidy"> Full Service Bath &amp; Tidy</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Haircut"> Full Service Haircut</label>
           </div>
         </div>
 
