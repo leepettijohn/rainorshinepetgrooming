@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- v2.0 2026-5-12 -->
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -72,11 +71,8 @@
 
   /* ---------- Coming Soon Banner ---------- */
   .banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 101;
+    position: relative;
+    z-index: 102;
     background: linear-gradient(90deg, var(--gold-deep) 0%, var(--gold) 50%, var(--gold-deep) 100%);
     color: var(--cream);
     padding: 0.65rem 1.5rem;
@@ -98,17 +94,13 @@
   }
   .banner-icon { font-size: 1rem; }
 
-  /* Push nav and hero down below the banner */
-  nav { top: 42px; }
-  .hero { padding-top: 10rem; }
-
   /* ---------- Navigation ---------- */
   nav {
-    position: fixed; top: 0; left: 0; right: 0;
+    position: sticky; top: 0;
     z-index: 100;
     padding: 1.25rem 3rem;
     display: flex; justify-content: space-between; align-items: center;
-    background: rgba(246, 241, 232, 0.85);
+    background: rgba(246, 241, 232, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(176, 138, 62, 0.15);
@@ -157,10 +149,10 @@
 
   /* ---------- Hero ---------- */
   .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 120px);
     display: flex; align-items: center; justify-content: center;
     position: relative;
-    padding: 8rem 2rem 4rem;
+    padding: 5rem 2rem 4rem;
     text-align: center;
   }
   .hero-frame {
@@ -863,7 +855,7 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
     .banner { font-size: 0.7rem; padding: 0.55rem 1rem; letter-spacing: 1px; }
-    nav { padding: 1rem 1.5rem; top: 38px; }
+    nav { padding: 1rem 1.5rem; }
     nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0;
              flex-direction: column; background: var(--cream); padding: 1.5rem;
              border-bottom: 1px solid var(--line); gap: 1.25rem; }
@@ -942,7 +934,7 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-portrait scroll-reveal">
-        <img src="/tatyana.jpg" alt="Tatyana Strahan LaBlue, owner of Rain or Shine Pet Grooming">
+        <img src="https://gottamoveforward.com/wp-content/uploads/2026/04/tatyana.jpg" alt="Tatyana Strahan LaBlue, owner of Rain or Shine Pet Grooming">
       </div>
       <div class="about-text scroll-reveal">
         <span class="eyebrow">Meet Your Groomer</span>
