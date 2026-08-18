@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rain or Shine Pet Grooming · Fort Myers, FL</title>
+<meta name="description" content="Full-service pet grooming in Fort Myers and Southwest Florida. Tatyana Strahan LaBlue — 5+ years of professional experience. Book your appointment today." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #00273d;
+    --navy-deep: #001a2b;
+    --navy-soft: #123c56;
+    --cream: #fee5ce;
+    --cream-light: #fff2e1;
+    --cream-deep: #f5d6bb;
+    --orange: #f88d1b;
+    --orange-deep: #e67a0a;
+    --orange-soft: #ffb066;
+    --teal: #0097b2;
+    --teal-deep: #007a91;
+    --teal-soft: #4dbccd;
+    --charcoal: #1a1a1a;
+    --muted: rgba(0, 39, 61, 0.65);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: var(--navy);
+    background: var(--cream);
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  /* ---------- Announcement Banner ---------- */
+  .banner {
+    background: var(--orange);
+    color: var(--navy);
+    padding: 0.7rem 1.5rem;
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .banner-icon { font-size: 1.05rem; }
+
+  /* ---------- Navigation ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    padding: 1rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 30px rgba(0, 26, 43, 0.25);
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+  }
+  .brand-logo img {
+    height: 44px;
+    width: auto;
+    display: block;
+  }
+  .brand-logo-text {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: var(--cream);
+    font-size: 1.25rem;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .brand-logo-text small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-top: 0.15rem;
+    color: var(--teal-soft);
+    text-transform: uppercase;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+  nav ul a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.25s;
+    position: relative;
+  }
+  nav ul a:hover { color: var(--orange-soft); }
+  nav ul a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: var(--orange);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+  }
+  nav ul a:hover::after { transform: scaleX(1); }
+  nav ul a.nav-cta {
+    background: var(--orange);
+    color: var(--navy);
+    padding: 0.6rem 1.3rem;
+    border-radius: 100px;
+    font-weight: 700;
+    transition: all 0.25s;
+  }
+  nav ul a.nav-cta:hover {
+    background: var(--orange-soft);
+    color: var(--navy);
+    transform: translateY(-2px);
+  }
+  nav ul a.nav-cta::after { display: none; }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--cream);
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 5rem 2rem 8rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: var(--cream);
+    clip-path: polygon(0 100%, 100% 100%, 100% 40%, 0 90%);
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(248, 141, 27, 0.15);
+    color: var(--orange-soft);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(248, 141, 27, 0.3);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.75rem, 6vw, 4.75rem);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 .sun {
+    color: var(--orange);
+    display: inline-block;
+    position: relative;
+  }
+  .hero h1 .shine {
+    color: var(--teal-soft);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .hero p.lead {
+    font-size: 1.2rem;
+    color: rgba(254, 229, 206, 0.85);
+    line-height: 1.55;
+    margin-bottom: 2.5rem;
+    max-width: 32rem;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.3px;
+  }
+  .btn-primary {
+    background: var(--orange);
+    color: var(--navy);
+  }
+  .btn-primary:hover {
+    background: var(--orange-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(248, 141, 27, 0.35);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--cream);
+    border: 2px solid var(--cream);
+  }
+  .btn-outline:hover {
+    background: var(--cream);
+    color: var(--navy);
+  }
+
+  /* Hero logo panel */
+  .hero-logo-panel {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .hero-logo-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+  .floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .fs-1 {
+    top: 10%;
+    right: 5%;
+    width: 60px;
+    height: 60px;
+    background: var(--teal);
+    opacity: 0.4;
+    animation: float1 6s ease-in-out infinite;
+  }
+  .fs-2 {
+    bottom: 15%;
+    left: 5%;
+    width: 40px;
+    height: 40px;
+    background: var(--orange);
+    opacity: 0.3;
+    animation: float2 7s ease-in-out infinite;
+  }
+  .fs-3 {
+    top: 50%;
+    right: -5%;
+    width: 25px;
+    height: 25px;
+    background: var(--cream);
+    opacity: 0.2;
+    animation: float1 5s ease-in-out infinite;
+  }
+  @keyframes float1 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-15px) translateX(10px); }
+  }
+
+  /* ---------- Section base ---------- */
+  section {
+    padding: 6rem 2rem;
+    position: relative;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    display: inline-block;
+    color: var(--teal);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.05;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--orange-deep);
+    font-weight: 500;
+  }
+  .section-sub {
+    font-size: 1.15rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 42rem;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .section-header .section-sub {
+    margin: 0 auto;
+  }
+
+  /* ---------- About ---------- */
+  #about {
+    padding-top: 4rem;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-portrait {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--navy);
+    box-shadow:
+      0 25px 60px -20px rgba(0, 39, 61, 0.3),
+      0 0 0 8px var(--cream-light);
+  }
+  .about-portrait img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  .about-portrait::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 140px;
+    height: 140px;
+    background: var(--orange);
+    border-radius: 50%;
+    z-index: -1;
+  }
+  .about-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: var(--cream);
+    color: var(--navy);
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 15px 30px rgba(0, 26, 43, 0.25);
+    z-index: 3;
+  }
+  .about-badge .num {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+    line-height: 1;
+  }
+  .about-badge .label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--navy);
+  }
+
+  .about-text h2 { margin-bottom: 1.5rem; }
+  .about-text p {
+    font-size: 1.08rem;
+    color: var(--navy);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    opacity: 0.88;
+  }
+  .about-text .highlight {
+    background: linear-gradient(180deg, transparent 55%, rgba(0, 151, 178, 0.25) 55%);
+    padding: 0 0.15em;
+    font-weight: 600;
+    color: var(--teal-deep);
+  }
+  .about-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  .signature {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed rgba(0, 39, 61, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .signature-mark {
+    width: 42px;
+    height: 42px;
+    background: var(--teal);
+    color: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .signature-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--navy);
+  }
+  .signature-title {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* ---------- Services ---------- */
+  #services {
+    background: var(--cream-light);
+    border-top: 1px solid rgba(0, 39, 61, 0.05);
+  }
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .package-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+  }
+  .package-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px -15px rgba(0, 39, 61, 0.2);
+  }
+  .package-card-featured {
+    background: var(--navy);
+    color: var(--cream);
+    transform: scale(1.03);
+  }
+  .package-card-featured .package-name,
+  .package-card-featured .package-tier { color: var(--cream); }
+  .package-card-featured .package-tagline { color: rgba(254, 229, 206, 0.75); }
+  .package-card-featured .package-features li { color: rgba(254, 229, 206, 0.9); }
+  .package-card-featured .package-features li::before { color: var(--orange); }
+  .package-card-featured:hover {
+    transform: scale(1.05) translateY(-6px);
+    box-shadow: 0 30px 60px -15px rgba(0, 39, 61, 0.4);
+  }
+  .package-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--orange);
+    color: var(--navy);
+    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 100px;
+    white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(248, 141, 27, 0.4);
+  }
+  .package-tier {
+    font-size: 0.72rem;
+    color: var(--teal);
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .package-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+  .package-tagline {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    font-style: italic;
+  }
+  .package-features {
+    list-style: none;
+  }
+  .package-features li {
+    padding: 0.6rem 0 0.6rem 1.75rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--navy);
+    border-bottom: 1px solid rgba(0, 39, 61, 0.08);
+  }
+  .package-features li:last-child { border-bottom: none; }
+  .package-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    color: var(--teal);
+    font-weight: 700;
+    background: var(--cream-light);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.7rem;
+  }
+  .package-card-featured .package-features li::before {
+    background: rgba(248, 141, 27, 0.15);
+    color: var(--orange);
+  }
+
+  .pricing-note {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--muted);
+    padding: 1.5rem;
+    background: white;
+    border-radius: 16px;
+    border-left: 4px solid var(--orange);
+    margin-top: 2rem;
+    font-style: italic;
+  }
+
+  /* Add-ons */
+  .addons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 3.5rem;
+  }
+  .addon-card {
+    background: white;
+    border-radius: 18px;
+    padding: 1.75rem;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+  }
+  .addon-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-3px);
+  }
+  .addon-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .addon-spa .addon-icon-wrap { background: rgba(248, 141, 27, 0.15); }
+  .addon-creative .addon-icon-wrap { background: rgba(0, 151, 178, 0.15); }
+  .addon-walkin .addon-icon-wrap { background: rgba(254, 229, 206, 0.9); }
+  .addon-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+  .addon-card p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+  }
+  .addon-list {
+    list-style: none;
+    margin-top: 0.75rem;
+  }
+  .addon-list li {
+    padding: 0.35rem 0;
+    font-size: 0.9rem;
+    color: var(--navy);
+  }
+  .addon-list li strong {
+    color: var(--teal-deep);
+    font-weight: 600;
+  }
+  .addon-fineprint {
+    font-size: 0.8rem !important;
+    font-style: italic;
+    margin-top: 0.75rem !important;
+    margin-bottom: 0 !important;
+    opacity: 0.7;
+  }
+
+  /* ---------- Service Area ---------- */
+  #area {
+    background: var(--navy);
+    color: var(--cream);
+    text-align: center;
+    padding: 5rem 2rem;
+  }
+  #area .eyebrow { color: var(--orange-soft); }
+  #area .section-title { color: var(--cream); }
+  #area .section-title em { color: var(--orange-soft); }
+  #area .section-sub { color: rgba(254, 229, 206, 0.75); }
+  .area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    max-width: 800px;
+    margin: 2.5rem auto 0;
+  }
+  .area-tag {
+    padding: 0.55rem 1.25rem;
+    background: rgba(254, 229, 206, 0.08);
+    border: 1px solid rgba(254, 229, 206, 0.2);
+    color: var(--cream);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.25s;
+  }
+  .area-tag:hover {
+    background: var(--orange);
+    color: var(--navy);
+    border-color: var(--orange);
+  }
+
+  /* ---------- Contact ---------- */
+  #contact {
+    background: var(--cream);
+    padding: 6rem 2rem;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-info h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .contact-info > p {
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+  }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(0, 39, 61, 0.1);
+  }
+  .contact-item:last-child { border-bottom: none; }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--navy);
+    color: var(--cream);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.15rem;
+  }
+  .contact-icon.orange { background: var(--orange); color: var(--navy); }
+  .contact-icon.teal { background: var(--teal); color: var(--cream); }
+  .contact-item .label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+  .contact-item .value {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 1.35;
+    display: block;
+  }
+  .contact-item a.value:hover { color: var(--orange-deep); }
+
+  /* Form */
+  form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px -10px rgba(0, 39, 61, 0.1);
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 2px solid rgba(0, 39, 61, 0.12);
+    border-radius: 10px;
+    background: var(--cream-light);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--navy);
+    transition: all 0.25s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(0, 151, 178, 0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+  }
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1rem;
+    background: var(--cream-light);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-size: 0.95rem;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .checkbox-item:hover {
+    border-color: rgba(0, 151, 178, 0.3);
+    background: white;
+  }
+  .checkbox-item input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--orange);
+    cursor: pointer;
+  }
+  .checkbox-item:has(input:checked) {
+    border-color: var(--teal);
+    background: white;
+  }
+
+  .form-submit-row {
+    margin-top: 1.5rem;
+  }
+  .form-submit-row .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1.1rem;
+    font-size: 1rem;
+  }
+  .form-success {
+    display: none;
+    padding: 1.5rem;
+    background: rgba(0, 151, 178, 0.1);
+    border: 2px solid var(--teal);
+    border-radius: 14px;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--teal-deep);
+    font-weight: 600;
+  }
+  .form-success.show {
+    display: block;
+    animation: fadeUp 0.5s ease-out;
+  }
+  .hp-field {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy-deep);
+    color: var(--cream);
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .footer-logo img { height: 56px; width: auto; }
+  .footer-logo-text {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: var(--cream);
+    font-size: 1.5rem;
+    line-height: 1;
+    text-align: left;
+  }
+  .footer-logo-text small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-top: 0.2rem;
+    color: var(--teal-soft);
+    text-transform: uppercase;
+  }
+  .footer-tag {
+    color: var(--orange-soft);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+  .footer-address {
+    color: rgba(254, 229, 206, 0.7);
+    font-size: 0.85rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.3px;
+  }
+  footer .footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+  footer .footer-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: all 0.25s;
+  }
+  footer .footer-links a:hover {
+    color: var(--orange-soft);
+    opacity: 1;
+  }
+  .footer-copy {
+    font-size: 0.78rem;
+    color: rgba(254, 229, 206, 0.4);
+    padding-top: 2rem;
+    border-top: 1px solid rgba(254, 229, 206, 0.1);
+    letter-spacing: 0.5px;
+  }
+
+  /* ---------- Animations ---------- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    nav { padding: 0.85rem 1.25rem; }
+    .brand-logo img { height: 38px; }
+    .brand-logo-text { font-size: 1.05rem; }
+    nav ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: var(--navy);
+      padding: 1.5rem;
+      gap: 1.25rem;
+      align-items: stretch;
+      box-shadow: 0 15px 30px rgba(0, 26, 43, 0.3);
+    }
+    nav ul.open { display: flex; }
+    nav ul a { padding: 0.5rem 0; }
+    nav ul a.nav-cta { text-align: center; }
+    .nav-toggle { display: block; }
+    .banner { font-size: 0.72rem; padding: 0.6rem 1rem; }
+
+    .hero { padding: 3rem 1.5rem 6rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-logo-panel { max-width: 320px; }
+    .hero-buttons { width: 100%; }
+    .hero-buttons .btn { flex: 1; justify-content: center; }
+
+    section { padding: 4rem 1.5rem; }
+    .about-grid, .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .about-portrait { max-width: 360px; margin: 0 auto; }
+    .packages-grid, .addons-grid { grid-template-columns: 1fr; }
+    .package-card-featured { transform: none; order: -1; }
+    .package-card-featured:hover { transform: translateY(-6px); }
+    form { padding: 1.75rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 601px) {
+    .checkbox-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Banner -->
+<div class="banner">
+  <span class="banner-icon">☀️</span>
+  <span><strong>Grand Opening Fall 2026</strong> — Now booking appointments!</span>
+</div>
+
+<!-- Nav -->
+<nav>
+  <a href="#top" class="brand-logo">
+    <img src="/logo.png" alt="Rain or Shine Pet Grooming">
+    <div class="brand-logo-text">
+      Rain or Shine
+      <small>Pet Grooming</small>
+    </div>
+  </a>
+  <ul id="navMenu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#area">Service Area</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tagline">
+        <span>🐾</span> Fort Myers · Southwest Florida
+      </div>
+      <h1>
+        Every pup's <span class="sun">happy place</span>,
+        <br><span class="shine">rain or shine.</span>
+      </h1>
+      <p class="lead">
+        Full-service grooming from a stylist who genuinely cares. Gentle handling, quality products, and a whole lot of love — because your best friend deserves it all.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Book Appointment →</a>
+        <a href="#services" class="btn btn-outline">See Services</a>
+      </div>
+    </div>
+    <div class="hero-logo-panel">
+      <div class="floating-shape fs-1"></div>
+      <div class="floating-shape fs-2"></div>
+      <div class="floating-shape fs-3"></div>
+      <img src="/logo-full.png" alt="Rain or Shine Pet Grooming logo">
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="scroll-reveal">
+        <div class="about-portrait">
+          <img src="/tatyana.jpg" alt="Tatyana Strahan LaBlue, owner of Rain or Shine Pet Grooming">
+          <div class="about-badge">
+            <span class="num">5+</span>
+            <span class="label">years of<br>experience</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text scroll-reveal">
+        <span class="eyebrow">Meet Your Groomer</span>
+        <h2 class="section-title">Hi, I'm Tatyana — <em>and I love what I do.</em></h2>
+        <p>I'm a pet groomer with 5+ years of professional experience, and I grew up working with rescues and fostering pets in need of homes. My special interest is in <span class="highlight">skin and coat health</span> — because your pet deserves to not only look their best, but to feel their best, too.</p>
+        <p>Every pet that visits me gets the full treatment — gentle handling, premium products, and the patience each one deserves. I use <strong>industry-backed techniques</strong> to keep even the most anxious pups calm and comfortable from the first brushstroke to the final blow-dry.</p>
+        <p>Rain or Shine Pet Grooming was built on a simple belief: your pet's happiness and well-being put a smile on my face. Your furry friend is in good hands — and will leave looking and feeling their absolute best.</p>
+        <div class="signature">
+          <div class="signature-mark">T</div>
+          <div>
+            <div class="signature-name">Tatyana Strahan LaBlue</div>
+            <div class="signature-title">Owner &amp; Pet Stylist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <span class="eyebrow">The Menu</span>
+      <h2 class="section-title">Services <em>crafted with care</em></h2>
+      <p class="section-sub">Every package is full-service — featuring our 2-step shampoo system tailored to your pet's individual skin and coat needs, blow dry, ear cleaning, brush out, and nail trim &amp; file (if your pet allows).</p>
+    </div>
+
+    <div class="packages-grid">
+      <div class="package-card scroll-reveal">
+        <div class="package-tier">Tier One</div>
+        <h3 class="package-name">Full Service Bath</h3>
+        <p class="package-tagline">The essentials, beautifully done.</p>
+        <ul class="package-features">
+          <li>2-step shampoo system</li>
+          <li>Conditioner</li>
+          <li>Blow dry</li>
+          <li>Ear cleaning</li>
+          <li>Brush out</li>
+          <li>Nail trim &amp; file</li>
+        </ul>
+      </div>
+
+      <div class="package-card package-card-featured scroll-reveal">
+        <div class="package-badge">★ Most Popular</div>
+        <div class="package-tier">Tier Two</div>
+        <h3 class="package-name">Full Service Bath &amp; Tidy</h3>
+        <p class="package-tagline">Everything in the Bath — and a polished finish.</p>
+        <ul class="package-features">
+          <li>Everything in Full Service Bath</li>
+          <li>Face trim</li>
+          <li>Feet trim</li>
+          <li>Sanitary trim</li>
+        </ul>
+      </div>
+
+      <div class="package-card scroll-reveal">
+        <div class="package-tier">Tier Three</div>
+        <h3 class="package-name">Full Service Haircut</h3>
+        <p class="package-tagline">The full treatment, head to paw.</p>
+        <ul class="package-features">
+          <li>Everything in Bath &amp; Tidy</li>
+          <li>Full body haircut</li>
+          <li>Breed-specific styling</li>
+          <li>Finishing touches</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="pricing-note scroll-reveal">
+      Starting prices vary by breed, size, coat condition, and behavior — contact for a personalized quote.
+    </p>
+
+    <div class="addons-grid">
+      <div class="addon-card addon-spa scroll-reveal">
+        <div class="addon-icon-wrap">✨</div>
+        <h3>Spa Packages</h3>
+        <p>Designed with health and luxury in mind. <em>Ask about our premium spa add-ons</em> for the pup who deserves the royal treatment.</p>
+      </div>
+      <div class="addon-card addon-creative scroll-reveal">
+        <div class="addon-icon-wrap">🎨</div>
+        <h3>Creative Grooming</h3>
+        <p>Because every dog has a flair for the dramatic.</p>
+        <ul class="addon-list">
+          <li><strong>Hair color</strong> — for the pup who wants to make a statement</li>
+          <li><strong>Nail pawlish</strong> — manicures, but make it canine 💅</li>
+        </ul>
+        <p class="addon-fineprint">May require a complimentary consultation.</p>
+      </div>
+      <div class="addon-card addon-walkin scroll-reveal">
+        <div class="addon-icon-wrap">🐾</div>
+        <h3>Walk-In Services</h3>
+        <p>Quick visits, no appointment needed:</p>
+        <ul class="addon-list">
+          <li>Nail trim &amp; file</li>
+          <li>Ear cleaning</li>
+          <li>Teeth brushing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Area -->
+<section id="area">
+  <div class="container">
+    <div class="scroll-reveal">
+      <span class="eyebrow">Where I Serve</span>
+      <h2 class="section-title">Proudly serving <em>Fort Myers</em><br>&amp; Southwest Florida</h2>
+      <p class="section-sub" style="margin: 0 auto;">Building a trusted local clientele across our beautiful corner of the Sunshine State.</p>
+      <div class="area-tags">
+        <span class="area-tag">Ft. Myers</span>
+        <span class="area-tag">Cape Coral</span>
+        <span class="area-tag">Bonita Springs</span>
+        <span class="area-tag">Estero</span>
+        <span class="area-tag">Naples</span>
+        <span class="area-tag">Lehigh Acres</span>
+        <span class="area-tag">Sanibel</span>
+        <span class="area-tag">Fort Myers Beach</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="section-title">Let's book your <em>appointment</em></h2>
+      <p class="section-sub">Fill out the form and I'll be in touch personally to confirm date, time, and pricing.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info scroll-reveal">
+        <h3>Reach out directly.</h3>
+        <p>Prefer a quick call, text, or email? Any of these work great.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon orange">📞</div>
+          <div>
+            <div class="label">Phone</div>
+            <a href="tel:2392372566" class="value">(239) 237-2566</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon teal">✉️</div>
+          <div>
+            <div class="label">Email</div>
+            <a href="mailto:info@rainorshinepetgrooming.com" class="value">info@rainorshinepetgrooming.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="label">Address</div>
+            <a href="https://maps.google.com/?q=12729-5+McGregor+Blvd+Fort+Myers+FL+33919" target="_blank" rel="noopener" class="value">12729-5 McGregor Blvd<br>Fort Myers, FL 33919</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon orange">🕐</div>
+          <div>
+            <div class="label">Hours</div>
+            <div class="value">By Appointment</div>
+          </div>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="scroll-reveal" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="booking">
+        <div class="hp-field" aria-hidden="true">
+          <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="petName">Pet's Name</label>
+            <input type="text" id="petName" name="petName" required>
+          </div>
+          <div class="form-group">
+            <label for="petBreed">Breed</label>
+            <input type="text" id="petBreed" name="petBreed">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="petSize">Pet Size</label>
+          <select id="petSize" name="petSize" required>
+            <option value="">Select size</option>
+            <option value="small">Small (under 20 lbs)</option>
+            <option value="medium">Medium (20–50 lbs)</option>
+            <option value="large">Large (50–80 lbs)</option>
+            <option value="xlarge">Extra Large (80+ lbs)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Service of Interest</label>
+          <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Bath"> Full Service Bath</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Bath &amp; Tidy"> Bath &amp; Tidy</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Haircut"> Full Haircut</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prefDate">Preferred Date</label>
+            <input type="date" id="prefDate" name="prefDate">
+          </div>
+          <div class="form-group">
+            <label for="prefTime">Preferred Time</label>
+            <select id="prefTime" name="prefTime">
+              <option value="">Select time</option>
+              <option value="08:00">8:00 AM</option>
+              <option value="08:15">8:15 AM</option>
+              <option value="08:30">8:30 AM</option>
+              <option value="08:45">8:45 AM</option>
+              <option value="09:00">9:00 AM</option>
+              <option value="09:15">9:15 AM</option>
+              <option value="09:30">9:30 AM</option>
+              <option value="09:45">9:45 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="10:15">10:15 AM</option>
+              <option value="10:30">10:30 AM</option>
+              <option value="10:45">10:45 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="11:15">11:15 AM</option>
+              <option value="11:30">11:30 AM</option>
+              <option value="11:45">11:45 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="12:15">12:15 PM</option>
+              <option value="12:30">12:30 PM</option>
+              <option value="12:45">12:45 PM</option>
+              <option value="13:00">1:00 PM</option>
+              <option value="13:15">1:15 PM</option>
+              <option value="13:30">1:30 PM</option>
+              <option value="13:45">1:45 PM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="14:15">2:15 PM</option>
+              <option value="14:30">2:30 PM</option>
+              <option value="14:45">2:45 PM</option>
+              <option value="15:00">3:00 PM</option>
+              <option value="15:15">3:15 PM</option>
+              <option value="15:30">3:30 PM</option>
+              <option value="15:45">3:45 PM</option>
+              <option value="16:00">4:00 PM</option>
+              <option value="16:15">4:15 PM</option>
+              <option value="16:30">4:30 PM</option>
+              <option value="16:45">4:45 PM</option>
+              <option value="17:00">5:00 PM</option>
+              <option value="17:15">5:15 PM</option>
+              <option value="17:30">5:30 PM</option>
+              <option value="17:45">5:45 PM</option>
+              <option value="18:00">6:00 PM</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" placeholder="Anything I should know about your pet..."></textarea>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn btn-primary">Request Appointment →</button>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          Thank you! Your request has been sent. Tatyana will be in touch shortly to confirm your appointment.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">
+    <img src="/logo.png" alt="Rain or Shine Pet Grooming">
+    <div class="footer-logo-text">
+      Rain or Shine
+      <small>Pet Grooming</small>
+    </div>
+  </div>
+  <div class="footer-tag">Fort Myers &amp; Southwest Florida</div>
+  <div class="footer-address">12729-5 McGregor Blvd · Fort Myers, FL 33919 · (239) 237-2566</div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#area">Service Area</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:2392372566">(239) 237-2566</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Rain or Shine Pet Grooming · All Rights Reserved</div>
+</footer>
+
+<script>
+  // Mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMenu.classList.remove('open')));
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.scroll-reveal').forEach(el => io.observe(el));
+
+  // Form submit — Netlify AJAX
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const successEl = document.getElementById('formSuccess');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+    }
+    const formData = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        successEl.classList.add('show');
+        if (submitBtn) submitBtn.style.display = 'none';
+        setTimeout(() => successEl.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+      })
+      .catch(error => {
+        console.error('Form submission error:', error);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request Appointment →';
+        }
+        alert("Sorry — there was a problem sending your request. Please try again, or call Tatyana directly at (239) 237-2566.");
+      });
+  }
+</script>
+
+</body>
+</html>
