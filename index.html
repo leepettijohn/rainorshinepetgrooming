@@ -3,321 +3,390 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rain or Shine Pet Grooming · Tatyana Strahan LaBlue · Ft. Myers, FL</title>
-<meta name="description" content="Elegant, stress-free pet grooming in Ft. Myers and Southwest Florida. Mobile and in-home appointments with Tatyana Strahan LaBlue. Reliable. Trustworthy. Book today." />
+<title>Rain or Shine Pet Grooming · Fort Myers, FL</title>
+<meta name="description" content="Full-service pet grooming in Fort Myers and Southwest Florida. Tatyana Strahan LaBlue — 5+ years of professional experience. Book your appointment today." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #f6f1e8;
-    --cream-light: #faf6ef;
-    --marble: #efe9de;
-    --ink: #1a1a1a;
-    --charcoal: #2b2a28;
-    --gold: #b08a3e;
-    --gold-light: #d4b06a;
-    --gold-deep: #8a6a26;
-    --muted: #6b645a;
-    --line: #cbbf9e;
+    --navy: #00273d;
+    --navy-deep: #001a2b;
+    --navy-soft: #123c56;
+    --cream: #fee5ce;
+    --cream-light: #fff2e1;
+    --cream-deep: #f5d6bb;
+    --orange: #f88d1b;
+    --orange-deep: #e67a0a;
+    --orange-soft: #ffb066;
+    --teal: #0097b2;
+    --teal-deep: #007a91;
+    --teal-soft: #4dbccd;
+    --charcoal: #1a1a1a;
+    --muted: rgba(0, 39, 61, 0.65);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    color: var(--charcoal);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: var(--navy);
     background: var(--cream);
-    line-height: 1.7;
+    line-height: 1.65;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ---------- Marble texture background ---------- */
-  .marble-bg {
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    background:
-      radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.9), transparent 60%),
-      radial-gradient(ellipse at 80% 30%, rgba(235,225,205,0.6), transparent 55%),
-      radial-gradient(ellipse at 60% 80%, rgba(220,210,188,0.5), transparent 50%),
-      linear-gradient(135deg, #f6f1e8 0%, #efe9de 40%, #f8f4ec 70%, #ede5d3 100%);
-  }
-  .marble-bg::before {
-    content: "";
-    position: absolute; inset: 0;
-    background-image:
-      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0.08 0'/></filter><rect width='600' height='600' filter='url(%23n)'/></svg>");
-    opacity: 0.6;
-    mix-blend-mode: multiply;
-  }
+  a { color: inherit; }
 
-  /* ---------- Gold accent ---------- */
-  .gold-text {
-    background: linear-gradient(135deg, #8a6a26 0%, #d4b06a 40%, #f2d98a 55%, #b08a3e 80%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .gold-line {
-    display: block;
-    width: 60px; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent);
-    margin: 1.25rem auto;
-  }
-
-  /* ---------- Coming Soon Banner ---------- */
+  /* ---------- Announcement Banner ---------- */
   .banner {
-    position: relative;
-    z-index: 102;
-    background: linear-gradient(90deg, var(--gold-deep) 0%, var(--gold) 50%, var(--gold-deep) 100%);
-    color: var(--cream);
-    padding: 0.65rem 1.5rem;
+    background: var(--orange);
+    color: var(--navy);
+    padding: 0.7rem 1.5rem;
     text-align: center;
-    font-size: 0.78rem;
-    letter-spacing: 1.5px;
-    font-weight: 400;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
-    font-family: 'Montserrat', sans-serif;
   }
-  .banner strong {
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  .banner-icon { font-size: 1rem; }
+  .banner-icon { font-size: 1.05rem; }
 
   /* ---------- Navigation ---------- */
   nav {
-    position: sticky; top: 0;
+    position: sticky;
+    top: 0;
     z-index: 100;
-    padding: 1.25rem 3rem;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(246, 241, 232, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(176, 138, 62, 0.15);
-    transition: padding 0.3s ease;
+    background: var(--navy);
+    padding: 1rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 30px rgba(0, 26, 43, 0.25);
   }
-  nav .brand {
-    font-family: 'Parisienne', cursive;
-    font-size: 1.6rem;
-    color: var(--ink);
-    letter-spacing: 0.5px;
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
     text-decoration: none;
   }
-  nav .brand:hover { color: var(--gold-deep); }
-  nav .brand span { color: var(--gold); }
+  .brand-logo img {
+    height: 68px;
+    width: auto;
+    display: block;
+  }
+  .brand-logo-text {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: var(--cream);
+    font-size: 1.25rem;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .brand-logo-text small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-top: 0.15rem;
+    color: var(--teal-soft);
+    text-transform: uppercase;
+  }
+
   nav ul {
-    display: flex; gap: 2.5rem; list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
   }
   nav ul a {
-    color: var(--charcoal);
+    color: var(--cream);
     text-decoration: none;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
+    font-size: 0.88rem;
     font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.25s;
     position: relative;
-    padding: 0.25rem 0;
-    transition: color 0.3s;
   }
+  nav ul a:hover { color: var(--orange-soft); }
   nav ul a::after {
-    content: "";
-    position: absolute; left: 0; right: 0; bottom: -4px;
-    height: 1px;
-    background: var(--gold);
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: var(--orange);
     transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.35s ease;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
   }
-  nav ul a:hover { color: var(--gold-deep); }
   nav ul a:hover::after { transform: scaleX(1); }
+  nav ul a.nav-cta {
+    background: var(--orange);
+    color: var(--navy);
+    padding: 0.6rem 1.3rem;
+    border-radius: 100px;
+    font-weight: 700;
+    transition: all 0.25s;
+  }
+  nav ul a.nav-cta:hover {
+    background: var(--orange-soft);
+    color: var(--navy);
+    transform: translateY(-2px);
+  }
+  nav ul a.nav-cta::after { display: none; }
 
-  .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
   .nav-toggle span {
-    display: block; width: 26px; height: 1.5px; background: var(--ink); margin: 6px 0;
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--cream);
+    margin: 5px 0;
+    border-radius: 2px;
     transition: 0.3s;
   }
 
   /* ---------- Hero ---------- */
   .hero {
-    min-height: calc(100vh - 120px);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-    padding: 5rem 2rem 4rem;
-    text-align: center;
-  }
-  .hero-frame {
-    position: relative;
-    max-width: 1100px;
-    width: 100%;
-    padding: 5rem 3rem;
-    border: 1px solid rgba(176, 138, 62, 0.3);
-    background: rgba(255, 253, 248, 0.35);
-    backdrop-filter: blur(4px);
-  }
-  .hero-frame::before, .hero-frame::after {
-    content: "";
-    position: absolute;
-    width: 40px; height: 40px;
-    border: 1px solid var(--gold);
-  }
-  .hero-frame::before {
-    top: -8px; left: -8px;
-    border-right: none; border-bottom: none;
-  }
-  .hero-frame::after {
-    bottom: -8px; right: -8px;
-    border-left: none; border-top: none;
-  }
-
-  .hero-tag {
-    font-size: 0.72rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--gold-deep);
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-  }
-  .hero h1 {
-    font-family: 'Parisienne', cursive;
-    font-size: clamp(3.5rem, 9vw, 7rem);
-    line-height: 0.95;
-    color: var(--ink);
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-  }
-  .hero h1 .shine { color: var(--gold); font-style: italic; }
-  .hero h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    font-weight: 400;
-    color: var(--charcoal);
-    margin-top: 0.5rem;
-  }
-  .hero-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.35rem;
-    color: var(--muted);
-    margin-top: 2rem;
-    max-width: 620px;
-    margin-left: auto; margin-right: auto;
-  }
-  .hero-cta {
-    display: inline-flex; gap: 1rem;
-    margin-top: 3rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--navy);
+    color: var(--cream);
+    padding: 5rem 2rem 8rem;
     position: relative;
     overflow: hidden;
   }
+  .hero::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: var(--cream);
+    clip-path: polygon(0 100%, 100% 100%, 100% 40%, 0 90%);
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(248, 141, 27, 0.15);
+    color: var(--orange-soft);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(248, 141, 27, 0.3);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.75rem, 6vw, 4.75rem);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 .sun {
+    color: var(--orange);
+    display: inline-block;
+    position: relative;
+  }
+  .hero h1 .shine {
+    color: var(--teal-soft);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .hero p.lead {
+    font-size: 1.2rem;
+    color: rgba(254, 229, 206, 0.85);
+    line-height: 1.55;
+    margin-bottom: 2.5rem;
+    max-width: 32rem;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.3px;
+  }
   .btn-primary {
-    background: var(--ink);
-    color: var(--cream);
-    border: 1px solid var(--ink);
+    background: var(--orange);
+    color: var(--navy);
   }
   .btn-primary:hover {
-    background: var(--gold-deep);
-    border-color: var(--gold-deep);
+    background: var(--orange-soft);
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(138, 106, 38, 0.25);
+    box-shadow: 0 12px 30px rgba(248, 141, 27, 0.35);
   }
   .btn-outline {
     background: transparent;
-    color: var(--charcoal);
-    border: 1px solid var(--charcoal);
+    color: var(--cream);
+    border: 2px solid var(--cream);
   }
   .btn-outline:hover {
-    background: var(--charcoal);
-    color: var(--cream);
-    transform: translateY(-2px);
+    background: var(--cream);
+    color: var(--navy);
   }
 
-  /* Decorative dog silhouette in hero — removed */
+  /* Hero logo panel */
+  .hero-logo-panel {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .hero-logo-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+  .floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .fs-1 {
+    top: 10%;
+    right: 5%;
+    width: 60px;
+    height: 60px;
+    background: var(--teal);
+    opacity: 0.4;
+    animation: float1 6s ease-in-out infinite;
+  }
+  .fs-2 {
+    bottom: 15%;
+    left: 5%;
+    width: 40px;
+    height: 40px;
+    background: var(--orange);
+    opacity: 0.3;
+    animation: float2 7s ease-in-out infinite;
+  }
+  .fs-3 {
+    top: 50%;
+    right: -5%;
+    width: 25px;
+    height: 25px;
+    background: var(--cream);
+    opacity: 0.2;
+    animation: float1 5s ease-in-out infinite;
+  }
+  @keyframes float1 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-15px) translateX(10px); }
+  }
 
-  /* ---------- Sections ---------- */
+  /* ---------- Section base ---------- */
   section {
-    padding: 7rem 2rem;
+    padding: 6rem 2rem;
     position: relative;
   }
   .container {
     max-width: 1200px;
     margin: 0 auto;
   }
-  .section-label {
-    font-size: 0.7rem;
-    letter-spacing: 5px;
+  .eyebrow {
+    display: inline-block;
+    color: var(--teal);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: var(--gold-deep);
-    text-align: center;
-    font-weight: 600;
+    margin-bottom: 0.75rem;
   }
   .section-title {
-    font-family: 'Parisienne', cursive;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    text-align: center;
-    color: var(--ink);
-    margin: 0.5rem 0 1rem;
-    font-weight: 400;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.05;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--orange-deep);
+    font-weight: 500;
   }
   .section-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--muted);
-    max-width: 680px;
-    margin: 0 auto 4rem;
+    line-height: 1.6;
+    max-width: 42rem;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .section-header .section-sub {
+    margin: 0 auto;
   }
 
   /* ---------- About ---------- */
   #about {
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns: 5fr 6fr;
     gap: 5rem;
     align-items: center;
   }
   .about-portrait {
     position: relative;
-    aspect-ratio: 3 / 4;
-    background: linear-gradient(135deg, #d4c8a8, #8a7a5a);
-    border: 1px solid var(--gold);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    aspect-ratio: 4 / 5;
+    border-radius: 24px;
     overflow: hidden;
-  }
-  .about-portrait::before {
-    content: "";
-    position: absolute; inset: 12px;
-    border: 1px solid rgba(255,255,255,0.4);
-    pointer-events: none;
-    z-index: 2;
+    background: var(--navy);
+    box-shadow:
+      0 25px 60px -20px rgba(0, 39, 61, 0.3),
+      0 0 0 8px var(--cream-light);
   }
   .about-portrait img {
     position: absolute;
@@ -326,382 +395,401 @@
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
-    display: block;
   }
-  .portrait-placeholder {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    color: rgba(255,255,255,0.6);
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 0.95rem;
-    letter-spacing: 2px;
-    text-align: center;
-    padding: 2rem;
+  .about-portrait::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 140px;
+    height: 140px;
+    background: var(--orange);
+    border-radius: 50%;
+    z-index: -1;
   }
-  .about-text h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
+  .about-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: var(--cream);
+    color: var(--navy);
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 15px 30px rgba(0, 26, 43, 0.25);
+    z-index: 3;
+  }
+  .about-badge .num {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+    line-height: 1;
+  }
+  .about-badge .label {
+    font-size: 0.78rem;
     font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 0.5rem;
     line-height: 1.2;
+    color: var(--navy);
   }
-  .about-text .eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold-deep);
-    margin-bottom: 1rem;
-    display: block;
-  }
+
+  .about-text h2 { margin-bottom: 1.5rem; }
   .about-text p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    color: var(--charcoal);
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
+    font-size: 1.08rem;
+    color: var(--navy);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    opacity: 0.88;
   }
   .about-text .highlight {
-    font-family: 'Parisienne', cursive;
-    font-style: normal;
-    font-size: 1.4rem;
-    color: var(--gold-deep);
-    background: linear-gradient(180deg, transparent 60%, rgba(212, 176, 106, 0.25) 60%);
+    background: linear-gradient(180deg, transparent 55%, rgba(0, 151, 178, 0.25) 55%);
     padding: 0 0.15em;
-    line-height: 1.2;
+    font-weight: 600;
+    color: var(--teal-deep);
   }
   .about-text strong {
-    color: var(--ink);
-    font-weight: 600;
+    color: var(--orange-deep);
+    font-weight: 700;
   }
-  .about-text .signature {
-    font-family: 'Parisienne', cursive;
-    font-size: 2rem;
-    color: var(--gold-deep);
-    margin-top: 1.5rem;
+  .signature {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed rgba(0, 39, 61, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .signature-mark {
+    width: 42px;
+    height: 42px;
+    background: var(--teal);
+    color: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .signature-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--navy);
+  }
+  .signature-title {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.5px;
   }
 
   /* ---------- Services ---------- */
   #services {
-    background: linear-gradient(180deg, transparent 0%, rgba(255, 253, 248, 0.4) 50%, transparent 100%);
+    background: var(--cream-light);
+    border-top: 1px solid rgba(0, 39, 61, 0.05);
   }
-
-  /* Tiered packages */
   .packages-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
   .package-card {
-    background: rgba(255, 253, 248, 0.7);
-    border: 1px solid rgba(176, 138, 62, 0.25);
-    padding: 3rem 2rem 2.5rem;
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
     position: relative;
-    text-align: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
   }
-  .package-card::before, .package-card::after {
-    content: "";
-    position: absolute;
-    width: 25px; height: 25px;
-    border: 1px solid var(--gold);
-  }
-  .package-card::before { top: -5px; left: -5px; border-right: none; border-bottom: none; }
-  .package-card::after { bottom: -5px; right: -5px; border-left: none; border-top: none; }
   .package-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    background: rgba(255, 253, 248, 0.95);
+    box-shadow: 0 25px 50px -15px rgba(0, 39, 61, 0.2);
   }
   .package-card-featured {
-    background: rgba(255, 253, 248, 0.95);
-    border-color: var(--gold);
-    box-shadow: 0 15px 35px rgba(176, 138, 62, 0.15);
+    background: var(--navy);
+    color: var(--cream);
+    transform: scale(1.03);
+  }
+  .package-card-featured .package-name,
+  .package-card-featured .package-tier { color: var(--cream); }
+  .package-card-featured .package-tagline { color: rgba(254, 229, 206, 0.75); }
+  .package-card-featured .package-features li { color: rgba(254, 229, 206, 0.9); }
+  .package-card-featured .package-features li::before { color: var(--orange); }
+  .package-card-featured:hover {
+    transform: scale(1.05) translateY(-6px);
+    box-shadow: 0 30px 60px -15px rgba(0, 39, 61, 0.4);
   }
   .package-badge {
     position: absolute;
     top: -14px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--ink);
-    color: var(--cream);
-    padding: 0.5rem 1.2rem;
-    font-size: 0.65rem;
-    letter-spacing: 3px;
+    background: var(--orange);
+    color: var(--navy);
+    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-weight: 500;
+    border-radius: 100px;
     white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(248, 141, 27, 0.4);
   }
   .package-tier {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 0.9rem;
-    color: var(--gold-deep);
-    letter-spacing: 4px;
+    font-size: 0.72rem;
+    color: var(--teal);
+    font-weight: 700;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
   .package-name {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Fraunces', serif;
     font-size: 1.7rem;
-    font-weight: 600;
-    color: var(--ink);
+    font-weight: 700;
+    color: var(--navy);
     margin-bottom: 0.5rem;
-    line-height: 1.2;
+    line-height: 1.1;
   }
-  .package-card .gold-line { margin: 1rem auto 1.25rem; }
   .package-tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
+    font-size: 0.95rem;
     color: var(--muted);
-    font-size: 1.05rem;
     margin-bottom: 1.5rem;
+    line-height: 1.4;
+    font-style: italic;
   }
   .package-features {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-    display: inline-block;
   }
   .package-features li {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    color: var(--charcoal);
-    padding: 0.4rem 0 0.4rem 1.4rem;
+    padding: 0.6rem 0 0.6rem 1.75rem;
     position: relative;
-    border-bottom: 1px solid rgba(176, 138, 62, 0.12);
+    font-size: 0.95rem;
+    color: var(--navy);
+    border-bottom: 1px solid rgba(0, 39, 61, 0.08);
   }
   .package-features li:last-child { border-bottom: none; }
   .package-features li::before {
-    content: "❋";
+    content: '✓';
     position: absolute;
     left: 0;
-    top: 0.4rem;
-    color: var(--gold);
-    font-size: 0.85rem;
+    top: 0.6rem;
+    color: var(--teal);
+    font-weight: 700;
+    background: var(--cream-light);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.7rem;
+  }
+  .package-card-featured .package-features li::before {
+    background: rgba(248, 141, 27, 0.15);
+    color: var(--orange);
   }
 
   .pricing-note {
     text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--muted);
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(176, 138, 62, 0.15);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 16px;
+    border-left: 4px solid var(--orange);
+    margin-top: 2rem;
+    font-style: italic;
   }
 
-  /* Add-ons (Spa / Creative / Walk-in) */
+  /* Add-ons */
   .addons-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 4rem;
+    gap: 1.25rem;
+    margin-top: 3.5rem;
   }
   .addon-card {
-    background: rgba(255, 253, 248, 0.5);
-    border: 1px dashed rgba(176, 138, 62, 0.4);
-    padding: 2rem 1.75rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+    border-radius: 18px;
+    padding: 1.75rem;
+    transition: all 0.3s;
+    border: 2px solid transparent;
   }
   .addon-card:hover {
-    background: rgba(255, 253, 248, 0.85);
-    border-style: solid;
-    border-color: var(--gold);
+    border-color: var(--teal);
     transform: translateY(-3px);
   }
-  .addon-icon {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
-    line-height: 1;
-  }
-  .addon-card h4 {
-    font-family: 'Cormorant Garamond', serif;
+  .addon-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .addon-spa .addon-icon-wrap { background: rgba(248, 141, 27, 0.15); }
+  .addon-creative .addon-icon-wrap { background: rgba(0, 151, 178, 0.15); }
+  .addon-walkin .addon-icon-wrap { background: rgba(254, 229, 206, 0.9); }
+  .addon-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
   }
   .addon-card p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    color: var(--charcoal);
-    line-height: 1.6;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.55;
     margin-bottom: 0.75rem;
   }
   .addon-list {
     list-style: none;
-    padding: 0;
-    margin: 0.5rem 0;
+    margin-top: 0.75rem;
   }
   .addon-list li {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
     padding: 0.35rem 0;
-    color: var(--charcoal);
-    border-bottom: 1px solid rgba(176, 138, 62, 0.1);
+    font-size: 0.9rem;
+    color: var(--navy);
   }
-  .addon-list li:last-child { border-bottom: none; }
   .addon-list li strong {
-    color: var(--gold-deep);
+    color: var(--teal-deep);
     font-weight: 600;
   }
   .addon-fineprint {
-    font-size: 0.85rem !important;
+    font-size: 0.8rem !important;
     font-style: italic;
-    color: var(--muted) !important;
     margin-top: 0.75rem !important;
     margin-bottom: 0 !important;
+    opacity: 0.7;
   }
-  .addon-spa { background: linear-gradient(135deg, rgba(255,253,248,0.6), rgba(212,176,106,0.08)); }
-  .addon-creative { background: linear-gradient(135deg, rgba(255,253,248,0.6), rgba(176,138,62,0.06)); }
-  .addon-walkin { background: linear-gradient(135deg, rgba(255,253,248,0.6), rgba(212,176,106,0.05)); }
 
   /* ---------- Service Area ---------- */
   #area {
+    background: var(--navy);
+    color: var(--cream);
     text-align: center;
+    padding: 5rem 2rem;
   }
-  .area-box {
-    max-width: 800px;
-    margin: 2rem auto 0;
-    padding: 3.5rem 3rem;
-    border: 1px solid rgba(176, 138, 62, 0.3);
-    background: rgba(255, 253, 248, 0.45);
-    position: relative;
-  }
-  .area-box::before, .area-box::after {
-    content: "";
-    position: absolute;
-    width: 30px; height: 30px;
-    border: 1px solid var(--gold);
-  }
-  .area-box::before { top: -6px; left: -6px; border-right: none; border-bottom: none; }
-  .area-box::after { bottom: -6px; right: -6px; border-left: none; border-top: none; }
-
-  .area-city {
-    font-family: 'Parisienne', cursive;
-    font-size: 3.5rem;
-    color: var(--ink);
-    line-height: 1;
-  }
-  .area-state {
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    font-size: 1rem;
-    color: var(--gold-deep);
-    margin-top: 0.5rem;
-  }
-  .area-desc {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    color: var(--charcoal);
-    margin-top: 1.5rem;
-    font-style: italic;
-  }
-  .area-neighborhoods {
-    margin-top: 2rem;
+  #area .eyebrow { color: var(--orange-soft); }
+  #area .section-title { color: var(--cream); }
+  #area .section-title em { color: var(--orange-soft); }
+  #area .section-sub { color: rgba(254, 229, 206, 0.75); }
+  .area-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.6rem;
     justify-content: center;
+    max-width: 800px;
+    margin: 2.5rem auto 0;
   }
   .area-tag {
-    padding: 0.5rem 1.25rem;
-    border: 1px solid var(--gold);
-    font-size: 0.72rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold-deep);
-    background: transparent;
+    padding: 0.55rem 1.25rem;
+    background: rgba(254, 229, 206, 0.08);
+    border: 1px solid rgba(254, 229, 206, 0.2);
+    color: var(--cream);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.25s;
+  }
+  .area-tag:hover {
+    background: var(--orange);
+    color: var(--navy);
+    border-color: var(--orange);
   }
 
   /* ---------- Contact ---------- */
   #contact {
-    background: linear-gradient(180deg, transparent, rgba(43, 42, 40, 0.03));
+    background: var(--cream);
+    padding: 6rem 2rem;
   }
   .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 5rem;
-    margin-top: 2rem;
+    grid-template-columns: 5fr 7fr;
+    gap: 4rem;
+    align-items: start;
   }
   .contact-info h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-    font-weight: 500;
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
-  .contact-info p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+  .contact-info > p {
     color: var(--muted);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
   }
   .contact-item {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
     align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(0, 39, 61, 0.1);
   }
-  .contact-item svg {
-    width: 22px; height: 22px;
-    color: var(--gold);
+  .contact-item:last-child { border-bottom: none; }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--navy);
+    color: var(--cream);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    margin-top: 3px;
+    font-size: 1.15rem;
   }
+  .contact-icon.orange { background: var(--orange); color: var(--navy); }
+  .contact-icon.teal { background: var(--teal); color: var(--cream); }
   .contact-item .label {
-    font-size: 0.7rem;
-    letter-spacing: 3px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--gold-deep);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
   }
   .contact-item .value {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Fraunces', serif;
     font-size: 1.15rem;
-    color: var(--ink);
+    color: var(--navy);
+    font-weight: 600;
     text-decoration: none;
+    line-height: 1.35;
+    display: block;
   }
-  .contact-item .value:hover { color: var(--gold-deep); }
+  .contact-item a.value:hover { color: var(--orange-deep); }
 
   /* Form */
   form {
-    background: rgba(255, 253, 248, 0.7);
-    padding: 3rem;
-    border: 1px solid rgba(176, 138, 62, 0.25);
-    position: relative;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px -10px rgba(0, 39, 61, 0.1);
   }
-  form::before, form::after {
-    content: "";
-    position: absolute;
-    width: 25px; height: 25px;
-    border: 1px solid var(--gold);
-  }
-  form::before { top: -5px; left: -5px; border-right: none; border-bottom: none; }
-  form::after { bottom: -5px; right: -5px; border-left: none; border-top: none; }
-
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    margin-bottom: 1.25rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
-  .form-group { margin-bottom: 1.25rem; }
+  .form-group { margin-bottom: 1rem; }
   .form-group label {
     display: block;
-    font-size: 0.7rem;
-    letter-spacing: 2.5px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--gold-deep);
-    font-weight: 500;
     margin-bottom: 0.5rem;
   }
   .form-group input,
@@ -709,61 +797,82 @@
   .form-group textarea {
     width: 100%;
     padding: 0.85rem 1rem;
-    background: rgba(255,255,255,0.6);
-    border: 1px solid rgba(176, 138, 62, 0.3);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    color: var(--ink);
-    transition: all 0.3s;
+    border: 2px solid rgba(0, 39, 61, 0.12);
+    border-radius: 10px;
+    background: var(--cream-light);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--navy);
+    transition: all 0.25s;
   }
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: var(--gold);
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 0 0 3px rgba(176, 138, 62, 0.1);
+    border-color: var(--teal);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(0, 151, 178, 0.12);
   }
   .form-group textarea { resize: vertical; min-height: 90px; }
-
   .checkbox-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 0.6rem;
-    margin-top: 0.5rem;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
   }
   .checkbox-item {
-    display: flex; align-items: center; gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1rem;
+    background: var(--cream-light);
+    border: 2px solid transparent;
+    border-radius: 10px;
     cursor: pointer;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    color: var(--charcoal);
+    transition: all 0.25s;
+    font-size: 0.95rem;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .checkbox-item:hover {
+    border-color: rgba(0, 151, 178, 0.3);
+    background: white;
   }
   .checkbox-item input {
-    width: auto;
-    accent-color: var(--gold);
+    width: 18px;
+    height: 18px;
+    accent-color: var(--orange);
+    cursor: pointer;
+  }
+  .checkbox-item:has(input:checked) {
+    border-color: var(--teal);
+    background: white;
   }
 
   .form-submit-row {
-    margin-top: 2rem;
-    text-align: center;
+    margin-top: 1.5rem;
   }
-
+  .form-submit-row .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1.1rem;
+    font-size: 1rem;
+  }
   .form-success {
     display: none;
     padding: 1.5rem;
-    background: rgba(176, 138, 62, 0.1);
-    border: 1px solid var(--gold);
+    background: rgba(0, 151, 178, 0.1);
+    border: 2px solid var(--teal);
+    border-radius: 14px;
     text-align: center;
     margin-top: 1.5rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--gold-deep);
+    color: var(--teal-deep);
+    font-weight: 600;
   }
-  .form-success.show { display: block; }
-
-  /* Honeypot: visually hidden but not display:none (more effective spam catch) */
+  .form-success.show {
+    display: block;
+    animation: fadeUp 0.5s ease-out;
+  }
   .hp-field {
     position: absolute;
     left: -10000px;
@@ -775,86 +884,85 @@
 
   /* ---------- Footer ---------- */
   footer {
-    background: var(--ink);
+    background: var(--navy);
     color: var(--cream);
     padding: 4rem 2rem 2rem;
     text-align: center;
     position: relative;
   }
-  footer .footer-brand {
-    font-family: 'Parisienne', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
   }
-  footer .footer-brand span { color: var(--gold-light); }
-  footer .footer-tag {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    color: var(--gold-light);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-  }
-  footer .footer-address {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.78rem;
-    letter-spacing: 2px;
+  .footer-logo img { height: 90px; width: auto; }
+  .footer-logo-text {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
     color: var(--cream);
-    opacity: 0.75;
-    margin-top: -1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    text-align: left;
+  }
+  .footer-logo-text small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-top: 0.2rem;
+    color: var(--teal-soft);
+    text-transform: uppercase;
+  }
+  .footer-tag {
+    color: var(--orange-soft);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+  .footer-address {
+    color: rgba(254, 229, 206, 0.7);
+    font-size: 0.85rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.3px;
   }
   footer .footer-links {
     display: flex;
     gap: 2rem;
     justify-content: center;
     list-style: none;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     flex-wrap: wrap;
   }
   footer .footer-links a {
     color: var(--cream);
     text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.8;
-    transition: opacity 0.3s, color 0.3s;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: all 0.25s;
   }
-  footer .footer-links a:hover { color: var(--gold-light); opacity: 1; }
-  footer .copy {
-    font-size: 0.75rem;
-    opacity: 0.5;
-    letter-spacing: 1px;
-    border-top: 1px solid rgba(212, 176, 106, 0.2);
+  footer .footer-links a:hover {
+    color: var(--orange-soft);
+    opacity: 1;
+  }
+  .footer-copy {
+    font-size: 0.78rem;
+    color: rgba(254, 229, 206, 0.4);
     padding-top: 2rem;
-    margin-top: 1rem;
-  }
-
-  /* ---------- Paw prints decoration ---------- */
-  .paw-trail {
-    position: absolute;
-    pointer-events: none;
-    opacity: 0.08;
+    border-top: 1px solid rgba(254, 229, 206, 0.1);
+    letter-spacing: 0.5px;
   }
 
   /* ---------- Animations ---------- */
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  .reveal {
-    opacity: 0;
-    animation: fadeUp 1s ease forwards;
-  }
-  .reveal.d1 { animation-delay: 0.15s; }
-  .reveal.d2 { animation-delay: 0.35s; }
-  .reveal.d3 { animation-delay: 0.55s; }
-  .reveal.d4 { animation-delay: 0.75s; }
-
   .scroll-reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
   }
   .scroll-reveal.visible {
     opacity: 1;
@@ -863,114 +971,146 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
-    .banner { font-size: 0.7rem; padding: 0.55rem 1rem; letter-spacing: 1px; }
-    nav { padding: 1rem 1.5rem; }
-    nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0;
-             flex-direction: column; background: var(--cream); padding: 1.5rem;
-             border-bottom: 1px solid var(--line); gap: 1.25rem; }
+    nav { padding: 0.85rem 1.25rem; }
+    .brand-logo img { height: 56px; }
+    nav ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: var(--navy);
+      padding: 1.5rem;
+      gap: 1.25rem;
+      align-items: stretch;
+      box-shadow: 0 15px 30px rgba(0, 26, 43, 0.3);
+    }
     nav ul.open { display: flex; }
+    nav ul a { padding: 0.5rem 0; }
+    nav ul a.nav-cta { text-align: center; }
     .nav-toggle { display: block; }
+    .banner { font-size: 0.72rem; padding: 0.6rem 1rem; }
 
-    .hero-frame { padding: 3.5rem 1.5rem; }
+    .hero { padding: 3rem 1.5rem 6rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-logo-panel { max-width: 320px; }
+    .hero-buttons { width: 100%; }
+    .hero-buttons .btn { flex: 1; justify-content: center; }
 
-    section { padding: 5rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
     .about-grid, .contact-grid {
       grid-template-columns: 1fr;
       gap: 3rem;
     }
-    .packages-grid, .addons-grid { grid-template-columns: 1fr; }
-    .package-card-featured { order: -1; }
     .about-portrait { max-width: 360px; margin: 0 auto; }
-    form { padding: 2rem 1.5rem; }
+    .packages-grid, .addons-grid { grid-template-columns: 1fr; }
+    .package-card-featured { transform: none; order: -1; }
+    .package-card-featured:hover { transform: translateY(-6px); }
+    form { padding: 1.75rem; }
     .form-row { grid-template-columns: 1fr; }
-    .area-box { padding: 2.5rem 1.5rem; }
-    .area-city { font-size: 2.5rem; }
+  }
+  @media (min-width: 601px) {
+    .checkbox-grid { grid-template-columns: 1fr 1fr 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- Coming Soon Banner -->
+<!-- Banner -->
 <div class="banner">
-  <span class="banner-icon">✨</span>
-  <span><strong>Coming this Fall:</strong> A brand-new brick &amp; mortar location — same trusted hands, brand-new home. Stay tuned!</span>
+  <span class="banner-icon">☀️</span>
+  <span><strong>Grand Opening Fall 2026</strong> — Now booking appointments!</span>
 </div>
 
-<div class="marble-bg"></div>
-
-<!-- Reusable paw icon -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="paw-icon" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 14c-3 0-6 2.2-6 5 0 1.7 1.3 3 3 3 1.1 0 2-.6 3-.6s1.9.6 3 .6c1.7 0 3-1.3 3-3 0-2.8-3-5-6-5zM5 12a2 2 0 100-4 2 2 0 000 4zm14 0a2 2 0 100-4 2 2 0 000 4zM9 7a2 2 0 100-4 2 2 0 000 4zm6 0a2 2 0 100-4 2 2 0 000 4z"/>
-    </symbol>
-  </defs>
-</svg>
-
-<!-- NAVIGATION -->
+<!-- Nav -->
 <nav>
-  <a href="#top" class="brand">Rain <span>or</span> Shine</a>
+  <a href="#top" class="brand-logo">
+    <img src="/logo.png" alt="Rain or Shine Pet Grooming">
+  </a>
   <ul id="navMenu">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#area">Service Area</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- HERO -->
+<!-- Hero -->
 <section class="hero" id="top">
-  <div class="hero-frame">
-    <p class="hero-tag reveal d1">Ft. Myers · Southwest Florida · By Appointment</p>
-    <h1 class="reveal d2">Rain <span class="shine">or</span> Shine</h1>
-    <span class="gold-line"></span>
-    <h2 class="reveal d3">Pet Grooming</h2>
-    <p class="hero-sub reveal d4">
-      A reliable, trustworthy caretaker for your beloved companion — where every wash, cut, and tail wag is treated with the care it deserves.
-    </p>
-    <div class="hero-cta reveal d4">
-      <a href="#contact" class="btn btn-primary">Book an Appointment</a>
-      <a href="#services" class="btn btn-outline">View Services</a>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tagline">
+        <span>🐾</span> Fort Myers · Southwest Florida
+      </div>
+      <h1>
+        Every pup's <span class="sun">happy place</span>,
+        <br><span class="shine">rain or shine.</span>
+      </h1>
+      <p class="lead">
+        Full-service grooming from a stylist who genuinely cares. Gentle handling, quality products, and a whole lot of love — because your best friend deserves it all.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Book Appointment →</a>
+        <a href="#services" class="btn btn-outline">See Services</a>
+      </div>
+    </div>
+    <div class="hero-logo-panel">
+      <div class="floating-shape fs-1"></div>
+      <div class="floating-shape fs-2"></div>
+      <div class="floating-shape fs-3"></div>
+      <img src="/logo-full.png" alt="Rain or Shine Pet Grooming logo">
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- About -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
-      <div class="about-portrait scroll-reveal">
-        <img src="/tatyana.jpg" alt="Tatyana Strahan LaBlue, owner of Rain or Shine Pet Grooming">
+      <div class="scroll-reveal">
+        <div class="about-portrait">
+          <img src="/tatyana.jpg" alt="Tatyana Strahan LaBlue, owner of Rain or Shine Pet Grooming">
+          <div class="about-badge">
+            <span class="num">5+</span>
+            <span class="label">years of<br>experience</span>
+          </div>
+        </div>
       </div>
       <div class="about-text scroll-reveal">
         <span class="eyebrow">Meet Your Groomer</span>
-        <h3>Hi, I'm Tatyana — and I love what I do.</h3>
-        <p>I'm a pet groomer with 5+ years of professional experience, and I grew up working with rescues and fostering pets in need of homes. My special interest is in <em class="highlight">skin and coat health</em> — because your pet deserves to not only look their best, but to feel their best, too.</p>
+        <h2 class="section-title">Hi, I'm Tatyana — <em>and I love what I do.</em></h2>
+        <p>I'm a pet groomer with 5+ years of professional experience, and I grew up working with rescues and fostering pets in need of homes. My special interest is in <span class="highlight">skin and coat health</span> — because your pet deserves to not only look their best, but to feel their best, too.</p>
         <p>Every pet that visits me gets the full treatment — gentle handling, premium products, and the patience each one deserves. I use <strong>industry-backed techniques</strong> to keep even the most anxious pups calm and comfortable from the first brushstroke to the final blow-dry.</p>
         <p>Rain or Shine Pet Grooming was built on a simple belief: your pet's happiness and well-being put a smile on my face. Your furry friend is in good hands — and will leave looking and feeling their absolute best.</p>
-        <div class="signature">— Tatyana Strahan LaBlue</div>
+        <div class="signature">
+          <div class="signature-mark">T</div>
+          <div>
+            <div class="signature-name">Tatyana Strahan LaBlue</div>
+            <div class="signature-title">Owner &amp; Pet Stylist</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- Services -->
 <section id="services">
   <div class="container">
-    <p class="section-label scroll-reveal">The Menu</p>
-    <h2 class="section-title scroll-reveal">Services crafted with care</h2>
-    <span class="gold-line"></span>
-    <p class="section-sub scroll-reveal">Every package is full-service — featuring our 2-step shampoo system tailored to your pet's individual skin and coat needs, blow dry, ear cleaning, brush out, and nail trim &amp; file (if your pet allows).</p>
+    <div class="section-header scroll-reveal">
+      <span class="eyebrow">The Menu</span>
+      <h2 class="section-title">Services <em>crafted with care</em></h2>
+      <p class="section-sub">Every package is full-service — featuring our 2-step shampoo system tailored to your pet's individual skin and coat needs, blow dry, ear cleaning, brush out, and nail trim &amp; file (if your pet allows).</p>
+    </div>
 
-    <!-- TIERED PACKAGES -->
     <div class="packages-grid">
       <div class="package-card scroll-reveal">
         <div class="package-tier">Tier One</div>
         <h3 class="package-name">Full Service Bath</h3>
-        <span class="gold-line"></span>
         <p class="package-tagline">The essentials, beautifully done.</p>
         <ul class="package-features">
           <li>2-step shampoo system</li>
@@ -983,10 +1123,9 @@
       </div>
 
       <div class="package-card package-card-featured scroll-reveal">
-        <div class="package-badge">Most Popular</div>
+        <div class="package-badge">★ Most Popular</div>
         <div class="package-tier">Tier Two</div>
         <h3 class="package-name">Full Service Bath &amp; Tidy</h3>
-        <span class="gold-line"></span>
         <p class="package-tagline">Everything in the Bath — and a polished finish.</p>
         <ul class="package-features">
           <li>Everything in Full Service Bath</li>
@@ -999,7 +1138,6 @@
       <div class="package-card scroll-reveal">
         <div class="package-tier">Tier Three</div>
         <h3 class="package-name">Full Service Haircut</h3>
-        <span class="gold-line"></span>
         <p class="package-tagline">The full treatment, head to paw.</p>
         <ul class="package-features">
           <li>Everything in Bath &amp; Tidy</li>
@@ -1011,20 +1149,18 @@
     </div>
 
     <p class="pricing-note scroll-reveal">
-      <em>Starting prices vary by breed, size, coat condition, and behavior — contact for a personalized quote.</em>
+      Starting prices vary by breed, size, coat condition, and behavior — contact for a personalized quote.
     </p>
 
-    <!-- SPA + CREATIVE + WALK-IN ADD-ONS -->
     <div class="addons-grid">
-      <div class="addon-card scroll-reveal addon-spa">
-        <div class="addon-icon">✨</div>
-        <h4>Spa Packages</h4>
+      <div class="addon-card addon-spa scroll-reveal">
+        <div class="addon-icon-wrap">✨</div>
+        <h3>Spa Packages</h3>
         <p>Designed with health and luxury in mind. <em>Ask about our premium spa add-ons</em> for the pup who deserves the royal treatment.</p>
       </div>
-
-      <div class="addon-card scroll-reveal addon-creative">
-        <div class="addon-icon">🎨</div>
-        <h4>Creative Grooming</h4>
+      <div class="addon-card addon-creative scroll-reveal">
+        <div class="addon-icon-wrap">🎨</div>
+        <h3>Creative Grooming</h3>
         <p>Because every dog has a flair for the dramatic.</p>
         <ul class="addon-list">
           <li><strong>Hair color</strong> — for the pup who wants to make a statement</li>
@@ -1032,10 +1168,9 @@
         </ul>
         <p class="addon-fineprint">May require a complimentary consultation.</p>
       </div>
-
-      <div class="addon-card scroll-reveal addon-walkin">
-        <div class="addon-icon">🐾</div>
-        <h4>Walk-In Services</h4>
+      <div class="addon-card addon-walkin scroll-reveal">
+        <div class="addon-icon-wrap">🐾</div>
+        <h3>Walk-In Services</h3>
         <p>Quick visits, no appointment needed:</p>
         <ul class="addon-list">
           <li>Nail trim &amp; file</li>
@@ -1047,17 +1182,14 @@
   </div>
 </section>
 
-<!-- SERVICE AREA -->
+<!-- Service Area -->
 <section id="area">
   <div class="container">
-    <p class="section-label scroll-reveal">Where I Serve</p>
-    <h2 class="section-title scroll-reveal">Proudly based in</h2>
-
-    <div class="area-box scroll-reveal">
-      <div class="area-city">Ft. Myers</div>
-      <div class="area-state">Southwest Florida</div>
-      <p class="area-desc">Serving Ft. Myers and the surrounding Southwest Florida communities — mobile grooming available for your convenience, so I can come to you.</p>
-      <div class="area-neighborhoods">
+    <div class="scroll-reveal">
+      <span class="eyebrow">Where I Serve</span>
+      <h2 class="section-title">Proudly serving <em>Fort Myers</em><br>&amp; Southwest Florida</h2>
+      <p class="section-sub" style="margin: 0 auto;">Building a trusted local clientele across our beautiful corner of the Sunshine State.</p>
+      <div class="area-tags">
         <span class="area-tag">Ft. Myers</span>
         <span class="area-tag">Cape Coral</span>
         <span class="area-tag">Bonita Springs</span>
@@ -1071,56 +1203,45 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- Contact -->
 <section id="contact">
   <div class="container">
-    <p class="section-label scroll-reveal">Get in Touch</p>
-    <h2 class="section-title scroll-reveal">Let's book your appointment</h2>
-    <span class="gold-line"></span>
-    <p class="section-sub scroll-reveal">Fill out the form and I'll be in touch personally to confirm date, time, and pricing — tailored to your pet.</p>
-
+    <div class="section-header scroll-reveal">
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="section-title">Let's book your <em>appointment</em></h2>
+      <p class="section-sub">Fill out the form and I'll be in touch personally to confirm date, time, and pricing.</p>
+    </div>
     <div class="contact-grid">
       <div class="contact-info scroll-reveal">
-        <h3>Reach Tatyana directly.</h3>
-        <p>Prefer a quick call or text? I'd love to hear from you.</p>
+        <h3>Reach out directly.</h3>
+        <p>Prefer a quick call, text, or email? Any of these work great.</p>
 
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div class="contact-icon orange">📞</div>
           <div>
             <div class="label">Phone</div>
             <a href="tel:2392372566" class="value">(239) 237-2566</a>
           </div>
         </div>
-
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <div class="contact-icon teal">✉️</div>
           <div>
             <div class="label">Email</div>
             <a href="mailto:info@rainorshinepetgrooming.com" class="value">info@rainorshinepetgrooming.com</a>
           </div>
         </div>
-
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <div>
-            <div class="label">Hours</div>
-            <div class="value">By Appointment · Flexible</div>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div class="contact-icon">📍</div>
           <div>
             <div class="label">Address</div>
             <a href="https://maps.google.com/?q=12729-5+McGregor+Blvd+Fort+Myers+FL+33919" target="_blank" rel="noopener" class="value">12729-5 McGregor Blvd<br>Fort Myers, FL 33919</a>
           </div>
         </div>
-
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div class="contact-icon orange">🕐</div>
           <div>
-            <div class="label">Service Area</div>
-            <div class="value">Ft. Myers &amp; Southwest Florida</div>
+            <div class="label">Hours</div>
+            <div class="value">By Appointment</div>
           </div>
         </div>
       </div>
@@ -1130,6 +1251,7 @@
         <div class="hp-field" aria-hidden="true">
           <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
         </div>
+
         <div class="form-row">
           <div class="form-group">
             <label for="name">Your Name</label>
@@ -1172,8 +1294,8 @@
           <label>Service of Interest</label>
           <div class="checkbox-grid">
             <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Bath"> Full Service Bath</label>
-            <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Bath &amp; Tidy"> Full Service Bath &amp; Tidy</label>
-            <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Haircut"> Full Service Haircut</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Bath &amp; Tidy"> Bath &amp; Tidy</label>
+            <label class="checkbox-item"><input type="checkbox" name="services" value="Full Service Haircut"> Full Haircut</label>
           </div>
         </div>
 
@@ -1186,14 +1308,6 @@
             <label for="prefTime">Preferred Time</label>
             <select id="prefTime" name="prefTime">
               <option value="">Select time</option>
-              <option value="06:00">6:00 AM</option>
-              <option value="06:15">6:15 AM</option>
-              <option value="06:30">6:30 AM</option>
-              <option value="06:45">6:45 AM</option>
-              <option value="07:00">7:00 AM</option>
-              <option value="07:15">7:15 AM</option>
-              <option value="07:30">7:30 AM</option>
-              <option value="07:45">7:45 AM</option>
               <option value="08:00">8:00 AM</option>
               <option value="08:15">8:15 AM</option>
               <option value="08:30">8:30 AM</option>
@@ -1235,14 +1349,6 @@
               <option value="17:30">5:30 PM</option>
               <option value="17:45">5:45 PM</option>
               <option value="18:00">6:00 PM</option>
-              <option value="18:15">6:15 PM</option>
-              <option value="18:30">6:30 PM</option>
-              <option value="18:45">6:45 PM</option>
-              <option value="19:00">7:00 PM</option>
-              <option value="19:15">7:15 PM</option>
-              <option value="19:30">7:30 PM</option>
-              <option value="19:45">7:45 PM</option>
-              <option value="20:00">8:00 PM</option>
             </select>
           </div>
         </div>
@@ -1253,22 +1359,24 @@
         </div>
 
         <div class="form-submit-row">
-          <button type="submit" class="btn btn-primary">Request Appointment</button>
+          <button type="submit" class="btn btn-primary">Request Appointment →</button>
         </div>
 
         <div class="form-success" id="formSuccess">
-          Thank you — your request has been sent. Tatyana will be in touch shortly to confirm your appointment.
+          Thank you! Your request has been sent. Tatyana will be in touch shortly to confirm your appointment.
         </div>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
-  <div class="footer-brand">Rain <span>or</span> Shine</div>
-  <div class="footer-tag">Pet Grooming · Ft. Myers &amp; Southwest Florida</div>
-  <div class="footer-address">12729-5 McGregor Blvd · Fort Myers, FL 33919</div>
+  <div class="footer-logo">
+    <img src="/logo.png" alt="Rain or Shine Pet Grooming">
+  </div>
+  <div class="footer-tag">Fort Myers &amp; Southwest Florida</div>
+  <div class="footer-address">12729-5 McGregor Blvd · Fort Myers, FL 33919 · (239) 237-2566</div>
   <ul class="footer-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -1276,7 +1384,7 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="tel:2392372566">(239) 237-2566</a></li>
   </ul>
-  <div class="copy">© 2026 RAIN OR SHINE PET GROOMING · ALL RIGHTS RESERVED</div>
+  <div class="footer-copy">© 2026 Rain or Shine Pet Grooming · All Rights Reserved</div>
 </footer>
 
 <script>
@@ -1297,22 +1405,17 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.scroll-reveal').forEach(el => io.observe(el));
 
-  // Form submit — Netlify AJAX submission
-  // https://docs.netlify.com/manage/forms/setup/#submit-html-forms-with-ajax
+  // Form submit — Netlify AJAX
   function handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
     const submitBtn = form.querySelector('button[type="submit"]');
     const successEl = document.getElementById('formSuccess');
-
-    // Disable the button while submitting so they can't double-click
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
     }
-
     const formData = new FormData(form);
-
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -1322,15 +1425,13 @@
         if (!response.ok) throw new Error('Network response was not ok');
         successEl.classList.add('show');
         if (submitBtn) submitBtn.style.display = 'none';
-        setTimeout(() => {
-          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
+        setTimeout(() => successEl.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
       })
       .catch(error => {
         console.error('Form submission error:', error);
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Request Appointment';
+          submitBtn.textContent = 'Request Appointment →';
         }
         alert("Sorry — there was a problem sending your request. Please try again, or call Tatyana directly at (239) 237-2566.");
       });
